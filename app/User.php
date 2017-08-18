@@ -315,15 +315,17 @@ class User extends Authenticatable
 
     private function validateUrlScheme($url, $protocol = "https")
     {
-        $delim = "://";
-        $arr = explode($delim, $url);
+        if(!is_null($url)) {
+          $delim = "://";
+          $arr = explode($delim, $url);
 
-        if (sizeof($arr) == 1) {
+          if (sizeof($arr) == 1) {
 
-            return $protocol . "://" . $url;
+              return $protocol . $delim . $url;
 
+          }
+
+          return $url;
         }
-
-        return $url;
     }
 }
