@@ -21,7 +21,7 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="{{ route('admin.artists.categories.index') }}">
                 {{ trans('navigation.content.artists.categories') }}
             </a>
         </li>
