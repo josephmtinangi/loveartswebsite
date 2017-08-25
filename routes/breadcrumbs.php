@@ -18,3 +18,10 @@ Breadcrumbs::register('admin.artists.categories.index', function ($breadcrumbs) 
 
     $breadcrumbs->push('Artist Categories', route('admin.artists.categories.index'));
 });
+
+// Home > Events
+Breadcrumbs::register('admin.events.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.home');
+
+    $breadcrumbs->push('Events', route('admin.events.index'));
+});
