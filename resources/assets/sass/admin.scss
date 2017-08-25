@@ -1,29 +1,29 @@
-// Variables
+//Variables
 @import "variables";
 
-// Bootstrap
+//Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-//lato font family
+//Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome";
+
+//Lato
 @import "node_modules/lato/scss/lato";
 
-//import bootstrap datepicker css
+//Bootstrap Date Picker
 @import "node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3";
 
-//import bootstrap colorpicker css
+//Bootstrap Color Picker
 @import "node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker";
 
-//import jquery-bootstrap-scrolling-tabs css
+//Jquery Bootstrap Scrolling Tabs
 @import "node_modules/jquery-bootstrap-scrolling-tabs/src/scss/jquery.scrolling-tabs";
 
-//import icons
-@import "icons";
-
-//import theme animation
+//Animate CSS
 @import "theme-animate";
 
-//import theme
+//Inspinia
 @import "theme";
 
-//import overrides
-//@import "overrides";
+//Overrides
+@import "overrides";

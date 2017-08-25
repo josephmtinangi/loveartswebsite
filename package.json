@@ -15,7 +15,14 @@
     "cross-env": "^3.2.3",
     "jquery": "^3.1.1",
     "laravel-mix": "0.*",
-    "lodash": "^4.17.4",
-    "vue": "^2.1.10"
+    "lodash": "^4.17.4"
+  },
+  "dependencies": {
+    "bootstrap-colorpicker": "^2.5.1",
+    "bootstrap-datepicker": "^1.7.1",
+    "font-awesome": "^4.7.0",
+    "jquery-bootstrap-scrolling-tabs": "^2.0.1",
+    "lato": "git+https://github.com/lykmapipo/lato.git",
+    "simple-line-icons": "^2.4.1"
   }
 }

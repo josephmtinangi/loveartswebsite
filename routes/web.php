@@ -39,7 +39,15 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::namespace('Admin')->prefix('/admin')->group(function () {
+<<<<<<< HEAD
     Route::get('/', function() {
         return view('admin.index');
+=======
+    Route::post('/logout', 'LogoutController@logout')->name('admin.logout');
+
+    Route::get('/', 'HomeController@showHome')->name('admin.home');
+    Route::get('/home', function () {
+        return redirect()->route('admin.home');
+>>>>>>> Implementing the dashboard
     });
 });

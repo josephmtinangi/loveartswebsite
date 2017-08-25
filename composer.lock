@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e41f26a8ca12ef67a01480923136c357",
+    "content-hash": "ed66d5100906c2c4f1c828962fd0ca01",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -54,6 +54,54 @@
                 "stream_filter_register"
             ],
             "time": "2015-11-08T23:41:30+00:00"
+        },
+        {
+            "name": "davejamesmiller/laravel-breadcrumbs",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/davejamesmiller/laravel-breadcrumbs.git",
+                "reference": "0b0f4792dee645b0f084164aa17d4320e4bb734f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/davejamesmiller/laravel-breadcrumbs/zipball/0b0f4792dee645b0f084164aa17d4320e4bb734f",
+                "reference": "0b0f4792dee645b0f084164aa17d4320e4bb734f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "illuminate/view": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "orchestra/testbench": "3.2.*|3.3.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DaveJamesMiller\\Breadcrumbs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT License"
+            ],
+            "authors": [
+                {
+                    "name": "Dave James Miller",
+                    "email": "dave@davejamesmiller.com",
+                    "homepage": "https://davejamesmiller.com/"
+                }
+            ],
+            "description": "A simple Laravel-style way to create breadcrumbs in Laravel.",
+            "homepage": "https://laravel-breadcrumbs.readthedocs.io/",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2017-06-24T11:10:49+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -531,6 +579,60 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "laracasts/flash",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "10cd420ab63fd0796bf5e1e5b99f87636d2f4333"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/10cd420ab63fd0796bf5e1e5b99f87636d2f4333",
+                "reference": "10cd420ab63fd0796bf5e1e5b99f87636d2f4333",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Flash\\FlashServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flash": "Laracasts\\Flash\\Flash"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2017-06-22T19:01:19+00:00"
         },
         {
             "name": "laravel/framework",
