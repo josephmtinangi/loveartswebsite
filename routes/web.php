@@ -62,4 +62,6 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
             return abort('403');
         });
     });
+
+    Route::get('/artists', 'ArtistController@index')->name('admin.artists.index');
 });

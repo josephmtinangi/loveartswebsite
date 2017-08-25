@@ -15,7 +15,7 @@
 
     <ul class="nav nav-second-level">
         <li>
-            <a href="#">
+            <a href="{{ route('admin.artists.index') }}">
                 {{ trans('navigation.content.artists.list') }}
             </a>
         </li>
