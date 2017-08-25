@@ -34,7 +34,19 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 // window.Pusher = require('pusher-js');
 
+<<<<<<< HEAD
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+=======
+window.autosize = window.autosize ? window.autosize : require('autosize');
+
+require('bootstrap-sass');
+
+require('bootstrap-datepicker');
+
+require('jquery-slimscroll');
+
+require('metismenu');
+>>>>>>> Install inspinia javascript assets
