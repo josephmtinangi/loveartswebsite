@@ -1,5 +1,5 @@
 <li>
-    <a href="{{ route('admin.home') }}">
+    <a class="{{ isActiveRoute('admin.home') }}" href="{{ route('admin.home') }}">
         <span class="nav-label">
             {{ trans('navigation.content.home.label') }}
         </span>

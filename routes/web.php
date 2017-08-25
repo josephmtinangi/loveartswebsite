@@ -50,4 +50,16 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
         return redirect()->route('admin.home');
 >>>>>>> Implementing the dashboard
     });
+
+    Route::prefix('/staging')->group(function () {
+        Route::get('/', function () {
+            if (config('app.env') == 'staging') {
+
+                return view('welcome');
+
+            }
+
+            return abort('403');
+        });
+    });
 });

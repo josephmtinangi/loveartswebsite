@@ -2,10 +2,10 @@
 
 ## Active
 
-- [ ] chore: Install breadcrumbs helper
-- [ ] chore: Install active menu helper
-- [ ] chore: Setup navigation menu items
 - [ ] chore: Artisan command to generate lang files
-- [ ] chore: Initiate staging routes
+- [x] chore: Mark current active menu item 
+- [x] chore: Setup navigation menu items
+- [x] chore: Setup breadcrumbs 
+- [x] chore: Initiate staging routes
 
 ## Pending
