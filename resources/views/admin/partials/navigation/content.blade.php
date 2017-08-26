@@ -61,7 +61,7 @@
     </a>
     <ul class="nav nav-second-level">
         <li>
-            <a href="#">
+            <a href="{{ route('admin.street_data.index') }}">
                 {{ trans('navigation.content.street_data.list') }}
             </a>
         </li>

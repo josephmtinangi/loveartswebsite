@@ -25,3 +25,10 @@ Breadcrumbs::register('admin.events.index', function ($breadcrumbs) {
 
     $breadcrumbs->push('Events', route('admin.events.index'));
 });
+
+// Home > Street Data
+Breadcrumbs::register('admin.street_data.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.home');
+
+    $breadcrumbs->push('Street Data', route('admin.street_data.index'));
+});
