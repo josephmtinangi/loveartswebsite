@@ -7,7 +7,7 @@
 - [ ] feat: As an Admin, I want to see a list of all registered System Users
 - [ ] feat: As an Admin, I want to see a list of all registered System Roles
 - [ ] feat: As an Admin, I want to see a list of all archived Events
-- [ ] feat: As an Admin, I want to see a list of all active Street Data
+- [x] feat: As an Admin, I want to see a list of all active Street Data
 - [x] chore: Generate lang asset artisan command
 - [x] chore: Make view artisan command
 - [x] feat: As an Admin, I want to see a list of all registered Artists
@@ -20,6 +20,7 @@
 
 ## Queued
 
-- [ ] chore: Make `StagingController`
-- [ ] chore: Make `EventController` resourceful
-- [ ] chore: Make `ArtistCategoryController` resourceful
+- chore: Make `EventController` resourceful
+- chore: Make `ArtistCategoryController` resourceful
+- chore: Use artisan command to manage staging
+- chore: Add pagination to lists
