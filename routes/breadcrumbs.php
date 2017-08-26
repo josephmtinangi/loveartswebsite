@@ -32,3 +32,10 @@ Breadcrumbs::register('admin.street_data.index', function ($breadcrumbs) {
 
     $breadcrumbs->push('Street Data', route('admin.street_data.index'));
 });
+
+// Home > System User
+Breadcrumbs::register('admin.system_users.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.home');
+
+    $breadcrumbs->push('System Users', route('admin.system_users.index'));
+});

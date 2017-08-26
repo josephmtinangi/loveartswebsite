@@ -69,4 +69,6 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
     Route::get('/events', 'EventController@index')->name('admin.events.index');
 
     Route::get('/street-data', 'StreetDataController@index')->name('admin.street_data.index');
+
+    Route::get('/system-users', 'SystemUserController@index')->name('admin.system_users.index');
 });

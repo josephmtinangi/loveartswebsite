@@ -85,7 +85,7 @@
 
     <ul class="nav nav-second-level">
         <li>
-            <a href="#">
+            <a href="{{ route('admin.system_users.index') }}">
                 {{ trans('navigation.content.system_users.list') }}
             </a>
         </li>
