@@ -51,18 +51,6 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
 >>>>>>> Implementing the dashboard
     });
 
-    Route::prefix('/staging')->group(function () {
-        Route::get('/', function () {
-            if (config('app.env') == 'staging') {
-
-                return view('welcome');
-
-            }
-
-            return abort('403');
-        });
-    });
-
     Route::get('/artists', 'ArtistController@index')->name('admin.artists.index');
     Route::get('/artists/categories', 'ArtistCategoryController@index')->name('admin.artists.categories.index');
 
