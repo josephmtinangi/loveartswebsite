@@ -91,7 +91,7 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="{{ route('admin.system_users.roles.index') }}">
                 {{ trans('navigation.content.system_users.roles') }}
             </a>
         </li>

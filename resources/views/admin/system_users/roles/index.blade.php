@@ -13,11 +13,8 @@
                     <thead>
 
                         <tr>
-                            <th>Avatar</th>
-                            <th>Name</th>
-                            <th>Role(s)</th>
-                            <th>Email</th>
-                            <th>Mobile</th>
+                            <th>Display Name</th>
+                            <th>Description</th>
                             <th>Actions</th>
                         </tr>
 
@@ -25,13 +22,10 @@
 
                     <tbody>
 
-                        @foreach($system_users as $item)
+                        @foreach($system_roles as $item)
                             <tr>
-                                <td><img src="{{ $item->avatar }}"></td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->role ?: 'Unknown' }}</td>
-                                <td>{{ $item->email }}</td>
-                                <td>{{ $item->phone ?: 'Unknown' }}</td>
+                                <td>{{ $item->title }}</td>
+                                <td>{{ $item->description }}</td>
                                 <td>
                                     <a class="btn btn-info btn-sm" href="#">Show</a>
 

@@ -39,3 +39,10 @@ Breadcrumbs::register('admin.system_users.index', function ($breadcrumbs) {
 
     $breadcrumbs->push('System Users', route('admin.system_users.index'));
 });
+
+// Home > System User > Roles
+Breadcrumbs::register('admin.system_users.roles.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.home');
+
+    $breadcrumbs->push('System Role', route('admin.system_users.roles.index'));
+});

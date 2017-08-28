@@ -34,6 +34,7 @@ class CreateBouncerTables extends Migration
             $table->string('name')->unique();
             $table->string('title')->nullable();
             $table->integer('level')->unsigned()->nullable();
+            $table->string('description');
             $table->timestamps();
         });
 

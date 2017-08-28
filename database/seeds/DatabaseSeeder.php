@@ -4,11 +4,6 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $this->call(PillarsTableSeeder::class);
@@ -17,5 +12,9 @@ class DatabaseSeeder extends Seeder
         $this->call(InfosTableSeeder::class);
         $this->call(ArtistImagesTableSeeder::class);
         $this->call(MediaTableSeeder::class);
+
+        // System Administration
+        $this->call(SystemUserRoleSeeder::class);
+        $this->call(SystemUserSeeder::class);
     }
 }
