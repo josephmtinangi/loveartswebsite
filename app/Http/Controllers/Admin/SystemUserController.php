@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Admin\Controller;
-use App\User;
+use App\SystemUser;
 use Illuminate\Http\Request;
 
 class SystemUserController extends Controller
@@ -13,7 +13,7 @@ class SystemUserController extends Controller
         return view('admin.system_users.index', [
             'route_title' => 'System Users',
             'route_description' => 'A list of all system users',
-            'system_users' => User::all(),
+            'system_users' => SystemUser::all(),
         ]);
     }
 }

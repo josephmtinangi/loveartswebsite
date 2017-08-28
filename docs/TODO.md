@@ -4,8 +4,8 @@
 
 - [ ] fix: Use actions in `/admin/artists` to maintain a uniform look
 - [ ] fix: Use breadcrumb `Home > Artists > Categories` instead of `Home > Artist Categories`
-- [ ] feat: List of all registered System Users
-- [ ] feat: List of all registered System Roles
+- [x] feat: List of all registered System Users
+- [x] feat: List of all registered System Roles
 - [ ] feat: List of all archived Events
 - [x] feat: List of all active Street Data
 - [x] chore: Generate lang asset artisan command
