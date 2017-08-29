@@ -185,7 +185,6 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Laravelista\Ekko\EkkoServiceProvider::class,
         Themsaid\Langman\LangmanServiceProvider::class,
-        Silber\Bouncer\BouncerServiceProvider::class,
         Sven\ArtisanView\ArtisanViewServiceProvider::class,
     ],
 
@@ -237,7 +236,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
-        'Bouncer' => Silber\Bouncer\BouncerFacade::class,
         'Ekko' => Laravelista\Ekko\Facades\Ekko::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,

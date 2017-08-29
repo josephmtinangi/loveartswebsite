@@ -1,13 +1,13 @@
 <li>
     <a class="{{ isActiveRoute('admin.home') }}" href="{{ route('admin.home') }}">
         <span class="nav-label">
-            {{ trans('navigation.content.home.label') }}
+            {{ trans('admin_navigation.content.home.label') }}
         </span>
     </a>
 <li>
     <a href="#">
         <span class="nav-label">
-            {{ trans('navigation.content.artists.label') }}
+            {{ trans('admin_navigation.content.artists.label') }}
         </span>
 
         <span class="fa arrow"></span>
@@ -16,13 +16,13 @@
     <ul class="nav nav-second-level">
         <li>
             <a href="{{ route('admin.artists.index') }}">
-                {{ trans('navigation.content.artists.list') }}
+                {{ trans('admin_navigation.content.artists.list') }}
             </a>
         </li>
 
         <li>
             <a href="{{ route('admin.artists.categories.index') }}">
-                {{ trans('navigation.content.artists.categories') }}
+                {{ trans('admin_navigation.content.artists.categories') }}
             </a>
         </li>
     </ul>
@@ -31,7 +31,7 @@
 <li>
     <a href="#">
         <span class="nav-label">
-            {{ trans('navigation.content.events.label') }}
+            {{ trans('admin_navigation.content.events.label') }}
         </span>
 
         <span class="fa arrow"></span>
@@ -39,13 +39,13 @@
     <ul class="nav nav-second-level">
         <li>
             <a href="{{ route('admin.events.index') }}">
-                {{ trans('navigation.content.events.list') }}
+                {{ trans('admin_navigation.content.events.list') }}
             </a>
         </li>
 
         <li>
             <a href="#">
-                {{ trans('navigation.content.events.archives') }}
+                {{ trans('admin_navigation.content.events.archives') }}
             </a>
         </li>
     </ul>
@@ -54,7 +54,7 @@
 <li>
     <a href="#">
         <span class="nav-label">
-            {{ trans('navigation.content.street_data.label') }}
+            {{ trans('admin_navigation.content.street_data.label') }}
         </span>
 
         <span class="fa arrow"></span>
@@ -62,13 +62,13 @@
     <ul class="nav nav-second-level">
         <li>
             <a href="{{ route('admin.street_data.index') }}">
-                {{ trans('navigation.content.street_data.list') }}
+                {{ trans('admin_navigation.content.street_data.list') }}
             </a>
         </li>
 
         <li>
             <a href="#">
-                {{ trans('navigation.content.street_data.archives') }}
+                {{ trans('admin_navigation.content.street_data.archives') }}
             </a>
         </li>
     </ul>
@@ -77,7 +77,7 @@
 <li>
     <a href="#">
         <span class="nav-label">
-            {{ trans('navigation.content.system_users.label') }}
+            {{ trans('admin_navigation.content.system.label') }}
         </span>
 
         <span class="fa arrow"></span>
@@ -85,14 +85,14 @@
 
     <ul class="nav nav-second-level">
         <li>
-            <a href="{{ route('admin.system_users.index') }}">
-                {{ trans('navigation.content.system_users.list') }}
+            <a href="{{ route('admin.users.index') }}">
+                {{ trans('admin_navigation.content.system.users') }}
             </a>
         </li>
 
         <li>
-            <a href="{{ route('admin.system_users.roles.index') }}">
-                {{ trans('navigation.content.system_users.roles') }}
+            <a href="{{ route('admin.roles.index') }}">
+                {{ trans('admin_navigation.content.system.roles') }}
             </a>
         </li>
     </ul>

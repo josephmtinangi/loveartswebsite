@@ -11,9 +11,9 @@ class EventController extends Controller
     public function index()
     {
         return view('admin.events.index', [
-            'route_title' => '',
-            'route_description' => '',
-            'events' => Event::all(), 
+            'route_title' => trans('admin_events.title'),
+            'route_description' => trans('admin_events.description'),
+            'events' => Event::orderBy('created_at', 'asc')->paginate(),
         ]);
     }
 }

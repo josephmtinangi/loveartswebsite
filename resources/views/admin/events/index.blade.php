@@ -15,8 +15,8 @@
                         <tr>
                             <th>Title</th>
                             <th>Location</th>
-                            <th>Start date</th>
-                            <th>End date</th>
+                            <th>Starts At</th>
+                            <th>Ends At</th>
                             <th>Actions</th>
                         </tr>
 
@@ -41,6 +41,8 @@
                     </tbody>
 
                 </table>
+
+                @include('admin.partials.paginator', ['resource' => $events])
 
             </div>
 

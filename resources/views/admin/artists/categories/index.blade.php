@@ -36,6 +36,8 @@
 
                 </table>
 
+                @include('admin.partials.paginator', ['resource' => $categories])
+
             </div>
 
         </div>

@@ -14,7 +14,7 @@
 
                     <strong class="font-bold">
 
-                        John Doe
+                       User Name
 
                     </strong>
 
@@ -22,7 +22,7 @@
 
                 <span class="text-muted text-xs block">
 
-                    French Aristocrat <b class="caret"></b>
+                    User Role <b class="caret"></b>
 
                 </span>
 
@@ -33,11 +33,11 @@
         {{--@start .dropdown-menu--}}
         <ul class="dropdown-menu m-t-xs">
             <li>
-                <a href="#">{{ trans('navigation.header.profile') }}</a>
+                <a href="#">{{ trans('admin_navigation.header.profile') }}</a>
             </li>
 
             <li>
-                <a href="#">{{ trans('navigation.header.settings') }}</a>
+                <a href="#">{{ trans('admin_navigation.header.settings') }}</a>
             </li>
 
             <li class="divider"></li>
@@ -48,7 +48,7 @@
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
 
-                    {{ trans('navigation.header.signout') }}
+                    {{ trans('admin_navigation.header.signout') }}
 
                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 

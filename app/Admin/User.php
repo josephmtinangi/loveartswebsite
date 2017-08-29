@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Admin;
 
-use Silber\Bouncer\Database\HasRolesAndAbilities;
-use Illuminate\Database\Eloquent\Model;
+use App\Admin\Role;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class SystemUser extends Model
+class User extends Authenticatable
 {
-    use HasRolesAndAbilities;
+    protected $table = 'admin_users';
 
     protected $fillable = [
         'name',

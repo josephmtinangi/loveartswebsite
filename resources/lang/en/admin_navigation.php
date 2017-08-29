@@ -40,9 +40,9 @@ return [
             'archives' =>  'Archives',
         ],
 
-        'system_users' => [
-            'label' => 'System Users',
-            'list' => 'List',
+        'system' => [
+            'label' => 'System',
+            'users' => 'Users',
             'roles' => 'Roles',
         ],
     ],

@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
+use Admin\UserSeeder;
+use Admin\RoleSeeder;
+
 class DatabaseSeeder extends Seeder
 {
     public function run()
@@ -14,7 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MediaTableSeeder::class);
 
         // System Administration
-        $this->call(SystemUserRoleSeeder::class);
-        $this->call(SystemUserSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

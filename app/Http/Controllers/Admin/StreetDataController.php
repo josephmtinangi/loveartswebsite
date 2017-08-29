@@ -13,7 +13,7 @@ class StreetDataController extends Controller
         return view('admin.street_data.index', [
             'route_title' => 'Street Data',
             'route_description' => 'Data za kitaa',
-            'street_data' => Info::all(),
+            'street_data' => Info::orderBy('created_at')->paginate(),
         ]);
     }
 }

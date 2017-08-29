@@ -15,7 +15,7 @@
                         <tr>
                             <th>Avatar</th>
                             <th>Name</th>
-                            <th>Role(s)</th>
+                            <th>Role</th>
                             <th>Email</th>
                             <th>Mobile</th>
                             <th>Actions</th>
@@ -25,13 +25,13 @@
 
                     <tbody>
 
-                        @foreach($system_users as $item)
+                        @foreach($users as $item)
                             <tr>
-                                <td><img class="img-circle" src="{{ $item->avatar }}" width="36" height="34"></td>
+                                <td><img class="img-circle" src="{{ $item->avatar }}" width="36" height="36"></td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->role ?: 'Unknown' }}</td>
+                                <td>{{ \App\Admin\Role::NORMAL }}</td>
                                 <td>{{ $item->email }}</td>
-                                <td>{{ $item->phone ?: 'Unknown' }}</td>
+                                <td>{{ $item->mobile ?: 'Not Available' }}</td>
                                 <td>
                                     <a class="btn btn-info btn-sm" href="#">Show</a>
 
@@ -43,6 +43,8 @@
                     </tbody>
 
                 </table>
+
+                @include('admin.partials.paginator', ['resource' => $users])
 
             </div>
 

@@ -13,7 +13,7 @@
                     <thead>
 
                         <tr>
-                            <th>Display Name</th>
+                            <th>Title</th>
                             <th>Description</th>
                             <th>Actions</th>
                         </tr>
@@ -22,10 +22,10 @@
 
                     <tbody>
 
-                        @foreach($system_roles as $item)
+                        @foreach($roles as $item)
                             <tr>
-                                <td>{{ $item->title }}</td>
-                                <td>{{ $item->description }}</td>
+                                <td>{{ $item }}</td>
+                                <td>Not Available</td>
                                 <td>
                                     <a class="btn btn-info btn-sm" href="#">Show</a>
 

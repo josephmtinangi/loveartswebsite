@@ -25,8 +25,8 @@ class RouteViewBindings
         View::share('route', $route);
         View::share('route_name', $route_name);
         View::share('route_action', $route_action);
-        View::share('route_title', trans('dashboard.title'));
-        View::share('route_description', trans('dashboard.description'));
+        View::share('route_title', trans('admin_home.title'));
+        View::share('route_description', trans('admin_home.description'));
         View::share('instance', null);
 
         return $next($request);

@@ -38,6 +38,8 @@
 
                 </table>
 
+                @include('admin.partials.paginator', ['resource' => $street_data])
+
             </div>
 
         </div>
