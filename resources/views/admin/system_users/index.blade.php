@@ -27,7 +27,7 @@
 
                         @foreach($system_users as $item)
                             <tr>
-                                <td><img src="{{ $item->avatar }}"></td>
+                                <td><img class="img-circle" src="{{ $item->avatar }}" width="36" height="34"></td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->role ?: 'Unknown' }}</td>
                                 <td>{{ $item->email }}</td>

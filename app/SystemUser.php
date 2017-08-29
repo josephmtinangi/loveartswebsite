@@ -20,4 +20,9 @@ class SystemUser extends Model
         'password',
         'remember_token',
     ];
+
+    public function getAvatarAttribute()
+    {
+        return asset('images/avatar.jpg');
+    }
 }
