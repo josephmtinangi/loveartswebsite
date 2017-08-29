@@ -39,16 +39,21 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::namespace('Admin')->prefix('/admin')->group(function () {
-<<<<<<< HEAD
     Route::get('/', function() {
         return view('admin.index');
-=======
     Route::post('/logout', 'LogoutController@logout')->name('admin.logout');
+    Route::get('/login', 'AuthController@showLoginForm')->name('admin.login.showLoginForm');
+    Route::post('/login', 'AuthController@login')->name('admin.login');
+    Route::post('/logout', 'AuthController@logout')->name('admin.logout');
+
+    Route::get('/password/email', 'PasswordController@showSendResetEmailForm')->name('admin.password.showSendResetEmailForm');
+    Route::post('/password/email', 'PasswordController@sendResetEmail')->name('admin.password.sendResetEmail');
+    Route::get('/password/reset/{token?}', 'PasswordController@showResetForm')->name('admin.password.showResetForm');
+    Route::post('/password/reset', 'PasswordController@reset')->name('admin.password.reset');
 
     Route::get('/', 'HomeController@showHome')->name('admin.home');
     Route::get('/home', function () {
         return redirect()->route('admin.home');
->>>>>>> Implementing the dashboard
     });
 
     Route::get('/artists', 'ArtistController@index')->name('admin.artists.index');
@@ -59,5 +64,6 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
     Route::get('/street-data', 'StreetDataController@index')->name('admin.street_data.index');
 
     Route::get('/users', 'UserController@index')->name('admin.users.index');
+
     Route::get('/roles', 'RoleController@index')->name('admin.roles.index');
 });

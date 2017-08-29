@@ -33,10 +33,10 @@
 - chore: Make `EventController` resourceful
 - chore: Make `ArtistCategoryController` resourceful
 - chore: Use artisan command to manage staging
-- feat: Notify Admin (via email) on register event
-- feat: Notify (unverified) System User after verification event
 - feat: Registration for system users
 - feat: Verify images uploaded by an Artist
+- feat: Create user
+- feat: Notify user upon creation
 - feat: Create event items
 - feat: Create street-data items
 - feat: Create artist-category items

@@ -7,6 +7,8 @@
 
     {{--See http://www.iacquire.com/blog/18-meta-tags-every-webpage-should-have-in-2013--}}
 
+    {{--TODO Site-wide Metadata--}}
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name') }}</title>
