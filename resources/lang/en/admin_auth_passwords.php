@@ -17,5 +17,8 @@ return [
         'password_confirmation' => [
             'placeholder' => 'Confirm password',
         ],
+        'back_to_login' => [
+            'label' => 'Back to log in',
+        ],
     ],
 ];

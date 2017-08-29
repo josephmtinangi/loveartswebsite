@@ -1,35 +1,21 @@
 <?php
 /**
- * Check if string is set and not empty
+ * Returns the given variable if it is a string and it is not empty.
+ * Otherwise, returns the specified default string.
  *
- * @param $str
- * @return boolean
- */
-
-if (!function_exists('is_set')) {
-
-    function is_set($str = null)
-    {
-        return isset($str) && !empty($str);
-    }
-
-}
-
-
-/**
- * Show string if available else show default string.
- *
- * @param $str string
+ * @param string $var The variable to be checked.
+ * @param string $default The default string. If not specified, the default is 'Not Available'.
  * @return string
  */
+if (!function_exists('if_available')) {
 
-if (!function_exists('show_if_available')) {
-
-    function show_if_available($str = null, $default = 'Not Available')
+    function if_available($var = null, $default = 'Not Available')
     {
-        if (is_set($str)) return $value;
-
-        else return $default;
+        if (is_string($var) && !empty($var)) {
+            return $var;
+        } else {
+            return $default;
+        }
     }
 
 }

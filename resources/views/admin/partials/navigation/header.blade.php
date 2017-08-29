@@ -14,7 +14,7 @@
 
                     <strong class="font-bold">
 
-                       User Name
+                        {{ if_available(Auth::guard('admin')->user()->name) }}
 
                     </strong>
 
@@ -22,7 +22,7 @@
 
                 <span class="text-muted text-xs block">
 
-                    User Role <b class="caret"></b>
+                    {{ if_available(Auth::guard('admin')->user()->role) }} <b class="caret"></b>
 
                 </span>
 
@@ -50,9 +50,9 @@
 
                     {{ trans('admin_navigation.header.signout') }}
 
-                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
 
-                        {{ csrf_field() }}
+                        {!! Form::token() !!}
 
                     </form>
 

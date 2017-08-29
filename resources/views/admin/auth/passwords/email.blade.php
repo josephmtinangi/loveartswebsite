@@ -48,6 +48,12 @@
 
         {!! Form::close() !!}
 
+        <a class="btn btn-default block full-width m-b" href="{{ route('admin.showLoginForm') }}">
+
+            @lang('admin_auth_passwords.inputs.back_to_login.label')
+
+        </a>
+
     </div>
 
 @endsection

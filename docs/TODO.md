@@ -7,6 +7,7 @@
 - [ ] feat: List of all archived Events
 - [ ] feat: List of all archived Street Data
 
+- [x] feat: Remember me
 - [x] chore: Add pagination to lists
 - [x] fix: Use actions in `/admin/artists` to maintain a uniform look
 - [x] chore: Open social-media link in new tab
@@ -28,6 +29,7 @@
 
 ## Queued
 
+- chore: Branding i.e. colors and logo
 - chore: Human readable dates
 - chore: Render `route_description` in view
 - chore: Make `EventController` resourceful

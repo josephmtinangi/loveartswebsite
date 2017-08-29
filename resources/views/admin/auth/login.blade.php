@@ -44,11 +44,11 @@
         <div class="form-group{{ $errors->has('password') ?  'has-error' : '' }}">
 
             {!!
-                Form::text('password', null, [
+                Form::password('password', [
                     'class' => 'form-control',
-                    'aria-describedby' => 'passwordHelpBlock',
                     'placeholder' => trans('admin_auth_login.inputs.password.placeholder'),
                     'required' => 'required',
+                    'aria-describedby' => 'passwordHelpBlock',
                 ])
             !!}
 
@@ -57,6 +57,22 @@
                 {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
 
             @endif
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="checkbox">
+
+                <label>
+
+                    <input type="checkbox" name="remember" checked="checked">
+
+                    Remember me
+
+                </label>
+
+            </div>
 
         </div>
 

@@ -7,7 +7,7 @@ $factory->define(App\Admin\User::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'mobile' => $faker->phoneNumber,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' => $password ?: $password = bcrypt('secret@qwerty'),
         'remember_token' => str_random(10),
     ];
 

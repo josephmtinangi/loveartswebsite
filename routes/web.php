@@ -41,6 +41,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::namespace('Admin')->prefix('/admin')->group(function () {
     Route::get('/', function() {
         return view('admin.index');
+    });
+
     Route::post('/logout', 'LogoutController@logout')->name('admin.logout');
     Route::get('/login', 'AuthController@showLoginForm')->name('admin.login.showLoginForm');
     Route::post('/login', 'AuthController@login')->name('admin.login');
