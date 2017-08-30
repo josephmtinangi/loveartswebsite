@@ -32,9 +32,9 @@
                                 <td><img class="img-circle" src="{{ asset('images/avatar.jpg') }}" width="36" height="36"></td>
                                 <td>{{ $artist->name }}</td>
                                 <td>{{ $artist->email }}</td>
-                                <td>{{ show_if_available($artist->gender) }}</td>
-                                <td>{{ show_if_available($artist->category) }}</td>
-                                <td>{{ show_if_available($artist->status, 'Pending') }}</td>
+                                <td>{{ if_available($artist->gender) }}</td>
+                                <td>{{ if_available($artist->category) }}</td>
+                                <TD>{{ if_available($artist->status, 'Pending') }}</td>
                                 <td>
                                     @if ($artist->facebook_link)
                                         <a class="btn btn-link" href="{{ $artist->facebook_link }}" target="_blank">

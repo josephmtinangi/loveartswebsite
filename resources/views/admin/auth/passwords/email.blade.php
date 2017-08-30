@@ -16,7 +16,7 @@
             Form::open([
                 'class' => 'm-t',
                 'method' => 'POST',
-                'route' => 'admin.password.sendResetEmail',
+                'route' => 'admin.password.sendResetLinkEmail',
             ])
         !!}
         {{ csrf_field() }}

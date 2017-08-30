@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
 use Session;
@@ -12,7 +13,7 @@ class SocialLoginController extends Controller
     /**
      * Redirect the user to the authentication page.
      *
-     * @return Response
+     * @return \Illuminate\View\View
      */
     public function redirectToProvider($driver)
     {
@@ -20,9 +21,10 @@ class SocialLoginController extends Controller
     }
 
     /**
-     * Obtain the user information from Social.
+     * Obtain the user information from social login.
      *
-     * @return Response
+     * @param  string $driver
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function handleProviderCallback($driver)
     {

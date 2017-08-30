@@ -35,7 +35,7 @@
 
             @if($errors->any() && $errors->has('email'))
 
-                {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
+                {!! $errors->first('email', '<p class="help-block" id="emailHelpBlock">:message</p>') !!}
 
             @endif
 
@@ -54,7 +54,7 @@
 
             @if($errors->any() && $errors->has('password'))
 
-                {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
+                {!! $errors->first('password', '<p class="help-block" id="passwordHelpBlock">:message</p>') !!}
 
             @endif
 
@@ -85,7 +85,7 @@
 
         {!! Form::close() !!}
 
-        <a class="btn btn-default block full-width m-b" href="{{ route('admin.password.showSendResetEmailForm') }}">
+        <a class="btn btn-default block full-width m-b" href="{{ route('admin.password.showLinkRequestForm') }}">
 
             @lang('admin_auth_login.inputs.forgot_password.label')
 

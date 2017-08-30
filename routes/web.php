@@ -4,11 +4,15 @@ Route::get('/homeSm', function () {
     return view('home-sm');
 });
 
-Auth::routes();
+Route::namespace('Auth')->group(function () {
+    Route::post('/logout', 'LoginController@logout')->name('logout');
 
-Route::prefix('login')->group(function () {
-    Route::get('/{driver}', 'SocialLoginController@redirectToProvider');
-    Route::get('/{driver}/callback', 'SocialLoginController@handleProviderCallback');
+    Route::prefix('/login')->group(function () {
+        Route::get('/', 'LoginController@showLoginForm')->name('login');
+
+        Route::get('/{driver}', 'SocialLoginController@redirectToProvider');
+        Route::get('/{driver}/callback', 'SocialLoginController@handleProviderCallback');
+    });
 });
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -39,21 +43,21 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::namespace('Admin')->prefix('/admin')->group(function () {
-    Route::get('/', function() {
-        return view('admin.index');
+    Route::namespace('Auth')->group(function () {
+        Route::post('/logout', 'LoginController@logout')->name('admin.logout');
+
+        Route::post('/login', 'LoginController@login')->name('admin.login');
+        Route::get('/login', 'LoginController@showLoginForm')->name('admin.showLoginForm');
+
+        Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('admin.password.sendResetLinkEmail');
+        Route::get('/password/email', 'ForgotPasswordController@showLinkRequestForm')->name('admin.password.showLinkRequestForm');
+
+        Route::post('/password/reset', 'ResetPasswordController@reset')->name('admin.password.reset');
+        Route::get('/password/reset/{token}', 'ResetPasswordController@showResetForm')->name('admin.password.showResetForm');
     });
 
-    Route::post('/logout', 'LogoutController@logout')->name('admin.logout');
-    Route::get('/login', 'AuthController@showLoginForm')->name('admin.login.showLoginForm');
-    Route::post('/login', 'AuthController@login')->name('admin.login');
-    Route::post('/logout', 'AuthController@logout')->name('admin.logout');
-
-    Route::get('/password/email', 'PasswordController@showSendResetEmailForm')->name('admin.password.showSendResetEmailForm');
-    Route::post('/password/email', 'PasswordController@sendResetEmail')->name('admin.password.sendResetEmail');
-    Route::get('/password/reset/{token?}', 'PasswordController@showResetForm')->name('admin.password.showResetForm');
-    Route::post('/password/reset', 'PasswordController@reset')->name('admin.password.reset');
-
     Route::get('/', 'HomeController@showHome')->name('admin.home');
+
     Route::get('/home', function () {
         return redirect()->route('admin.home');
     });

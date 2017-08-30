@@ -7,6 +7,9 @@
 - [ ] feat: List of all archived Events
 - [ ] feat: List of all archived Street Data
 
+- [x] chore: Remove Auth::routes
+- [x] feat: Forgot password
+- [x] feat: Log in admins
 - [x] feat: Remember me
 - [x] chore: Add pagination to lists
 - [x] fix: Use actions in `/admin/artists` to maintain a uniform look
@@ -29,25 +32,20 @@
 
 ## Queued
 
-- chore: Branding i.e. colors and logo
-- chore: Human readable dates
+- fix: /admin does not redirect to /admin/login if not authenticated
+- chore: Love arts branding
+- chore: Use human readable dates
 - chore: Render `route_description` in view
 - chore: Make `EventController` resourceful
 - chore: Make `ArtistCategoryController` resourceful
-- chore: Use artisan command to manage staging
-- feat: Registration for system users
-- feat: Verify images uploaded by an Artist
-- feat: Create user
-- feat: Notify user upon creation
+- chore: Run artisan staging
+- feat: Verify artist images
+- feat: Create administrator
 - feat: Create event items
 - feat: Create street-data items
 - feat: Create artist-category items
 - feat: Create role items
 - feat: Delete flagged artists
 - feat: Verify artists
-- feat: Verify admin users
 - feat: Filter artists based on status, gender, category
 - feat: Filter events based on location, start-date, end-date
-- feat: Log in system users
-- feat: Change password after System User verification
-- feat: Forgot password

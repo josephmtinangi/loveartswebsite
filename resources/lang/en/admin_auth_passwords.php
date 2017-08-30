@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
     'inputs' => [
@@ -6,7 +6,7 @@ return [
             'placeholder' => 'Enter your email address',
         ],
         'send_reset_link' => [
-            'label' => 'Send password reset email',
+            'label' => 'Send password reset link',
         ],
         'reset' => [
             'label' => 'Reset password',

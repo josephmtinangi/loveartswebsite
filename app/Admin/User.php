@@ -2,11 +2,15 @@
 
 namespace App\Admin;
 
+use App\Admin\CanResetPassword;
 use App\Admin\Role;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    use CanResetPassword, Notifiable;
+
     /**
      * The guard associated with the model.
      *
@@ -30,7 +34,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'remember_token'
     ];
 
     /**
