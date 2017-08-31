@@ -1,18 +1,18 @@
-<?php
+<?PHP
 
 namespace App\Http\Controllers;
 
+use App\StreetData;
 use Illuminate\Http\Request;
-use Image;
-use App\Info;
-
+use Intervention\Image\Facades\Image;
 
 class InfoController extends Controller
 {
     public function index()
     {
-        $infos = Info::orderBy('created_at', 'desc')->get(); //paginate(10);
-        return view('info.index', compact('infos'));
+        return view('info.index', [
+            'infos' => StreetData::query()->limit(10)->latest()->get(),
+        ]);
     }
 
     public function store(Request $request)
@@ -51,12 +51,6 @@ class InfoController extends Controller
             'yt_id' => $yt_id
         ];
 
-        return Info::create($info);
-//        return back()->withErrors(['msg','Please login first']);
-
-//        return response()->json([
-//            'success' => false,
-//            'msg' => "You must be logged in to follow a house"
-//        ]);
+        return StreetData::create($info);
     }
 }
