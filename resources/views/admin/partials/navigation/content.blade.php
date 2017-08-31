@@ -44,7 +44,7 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="{{ route('admin.events.archives.index') }}">
                 {{ trans('admin_navigation.content.events.archives') }}
             </a>
         </li>
@@ -67,7 +67,7 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="{{ route('admin.street_data.archives.index') }}">
                 {{ trans('admin_navigation.content.street_data.archives') }}
             </a>
         </li>

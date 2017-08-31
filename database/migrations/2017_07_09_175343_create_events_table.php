@@ -21,7 +21,12 @@ class CreateEventsTable extends Migration
             $table->string('location');
             $table->string('poster');
             $table->string('url')->nullable();
+
+            $table->dateTime('start_date');
+            $table->dateTime('archived_at')->nullable();
             $table->timestamps();
+
+            $table->unique(['title', 'start_date']);
         });
     }
 

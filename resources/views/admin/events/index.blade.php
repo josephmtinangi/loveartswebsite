@@ -15,8 +15,7 @@
                         <tr>
                             <th>Title</th>
                             <th>Location</th>
-                            <th>Starts At</th>
-                            <th>Ends At</th>
+                            <th>Start Date</th>
                             <th>Actions</th>
                         </tr>
 
@@ -28,8 +27,7 @@
                             <tr>
                                 <td>{{ $event->title }}</td>
                                 <td>{{ $event->location }}</td>
-                                <td>{{ $event->date }}</td>
-                                <td>{{ $event->date }}</td>
+                                <td>{{ $event->start_date }}</td>
                                 <td>
                                     <a class="btn btn-info btn-sm" href="#">Show</a>
 

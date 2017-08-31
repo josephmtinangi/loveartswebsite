@@ -4,21 +4,28 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class StreetData extends Model
 {
     /**
      * The column by which this model is sorted.
      *
      * @var const
      */
-    const SORT_COLUMN = 'start_date';
+    const SORT_COLUMN = 'title';
 
     /**
      * The order by which this model is sorted.
      *
      * @var const
      */
-    const SORT_ORDER = 'desc';
+    const SORT_ORDER = 'asc';
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'street_data';
 
     /**
      * The attributes that are mass assignable.
@@ -28,21 +35,20 @@ class Event extends Model
     protected $fillable = [
         'title',
         'description',
-        'date',
-        'location',
-        'poster',
+        'type',
         'url',
+        'yt_id',
+        'placeholder_color',
         'archived_at',
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * The attributes that should be casted to native types.
      *
      * @var array
      */
     protected $casts = [
         'archived_at' => 'datetime',
-        'date' => 'date',
     ];
 
     /**
@@ -57,9 +63,9 @@ class Event extends Model
     }
 
     /**
-     * Get all active events.
+     * Get all active street data.
      *
-     * @param  \Illuminate\Query\Builder $query
+     * @param  \Illuminate\Database\Query\Builder $query
      * @return \Illuminate\Database\Query\Builder
      */
     public function scopeActive($query)
@@ -68,9 +74,9 @@ class Event extends Model
     }
 
     /**
-     * Get all archived events.
+     * Get all archived street data.
      *
-     * @param  \Illuminate\Query\Builder $query
+     * @param  \Illuminate\Database\Query\Builder $query
      * @return \Illuminate\Database\Query\Builder
      */
     public function scopeArchived($query)

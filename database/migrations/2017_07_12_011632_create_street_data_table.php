@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInfosTable extends Migration
+class CreateStreetDataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('infos', function (Blueprint $table) {
+        Schema::create('street_data', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->text('description')->nullable();
@@ -21,6 +21,8 @@ class CreateInfosTable extends Migration
             $table->string('url')->nullable();
             $table->string('placeholder_color')->default("#000");
             $table->string('yt_id')->nullable();
+
+            $table->dateTime('archived_at')->nullable();
             $table->timestamps();
         });
     }

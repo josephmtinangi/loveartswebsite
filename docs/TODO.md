@@ -2,50 +2,58 @@
 
 ## Active
 
-- [ ] chore: Modify events to support start/end dates
-- [ ] chore: Modify `street_data` to support start/end dates
-- [ ] feat: List of all archived Events
-- [ ] feat: List of all archived Street Data
+- [ ] chore: use human readable dates
 
-- [x] chore: Remove Auth::routes
-- [x] feat: Forgot password
-- [x] feat: Log in admins
-- [x] feat: Remember me
-- [x] chore: Add pagination to lists
-- [x] fix: Use actions in `/admin/artists` to maintain a uniform look
-- [x] chore: Open social-media link in new tab
-- [x] chore: Add helper `show_if_available`
-- [x] fix: Use breadcrumb `Home > Artists > Categories` instead of `Home > Artist Categories`
-- [x] chore: Namespace all admin-panel code
-- [x] feat: List of all registered Admin Users
-- [x] feat: List of all registered Admin Roles
-- [x] feat: List of all active Street Data
-- [x] chore: Generate lang asset artisan command
-- [x] chore: Make view artisan command
-- [x] feat: List of all registered Artists
-- [x] feat: List of all available Artist Categories
-- [x] feat: List of all active Events
-- [x] chore: Mark current active menu item
-- [x] chore: Setup navigation menu items
+
+- [ ] feat: create an event
+- [ ] feat: create street-data
+- [ ] feat: create artist-category
+- [ ] feat: create role
+- [ ] feat: create admin-user
+- [ ] feat: verify artist
+- [ ] feat: verify artist image
+
+
+- [x] fix: use actions in `/admin/artists` to maintain a uniform look
+- [x] fix: use breadcrumb `Home > Artists > Categories` instead of `Home > Artist Categories`
+
+
+- [x] feat: list archived events
+- [x] feat: list archived street-data
+- [x] feat: remember-me
+- [x] feat: forgot password
+- [x] feat: log in admin-user
+- [x] feat: list available artists
+- [x] feat: list available events
+- [x] feat: list available admin-users
+- [x] feat: list available admin-roles
+- [x] feat: list available street-data
+- [x] feat: list available artist-categories
+
+
+- [x] chore: add start-date column to events-table-migration
+- [x] chore: add archived-at column to events-table-migration
+- [x] chore: add archived-at column to street-data-migration
 - [x] chore: Setup breadcrumbs
+- [x] chore: remove auth-routes
+- [x] chore: add pagination to lists
 - [x] chore: Initiate staging routes
+- [x] chore: Make view artisan command
+- [x] chore: Setup navigation menu items
+- [x] chore: Mark current active menu item
+- [x] chore: Namespace all admin-panel code
+- [x] chore: open social-media link in new tab
+- [x] chore: Generate lang asset artisan command
+- [x] chore: add string helper to show resource-item if available
 
 ## Queued
 
 - fix: /admin does not redirect to /admin/login if not authenticated
-- chore: Love arts branding
-- chore: Use human readable dates
-- chore: Render `route_description` in view
-- chore: Make `EventController` resourceful
-- chore: Make `ArtistCategoryController` resourceful
-- chore: Run artisan staging
-- feat: Verify artist images
-- feat: Create administrator
-- feat: Create event items
-- feat: Create street-data items
-- feat: Create artist-category items
-- feat: Create role items
-- feat: Delete flagged artists
-- feat: Verify artists
-- feat: Filter artists based on status, gender, category
-- feat: Filter events based on location, start-date, end-date
+
+- feat: filter artists based on status, gender, category
+- feat: filter events based on location, start-date
+- feat: delete flagged artists
+- feat: store street-data placeholder color
+
+- chore: project branding i.e. color, logo, typography
+- chore: run artisan staging

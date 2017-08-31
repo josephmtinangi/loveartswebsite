@@ -14,7 +14,7 @@
 
                         <tr>
                             <th>Title</th>
-                            <th>Updated at</th>
+                            <th>Last Modified Date</th>
                             <th>Actions</th>
                         </tr>
 

@@ -66,8 +66,10 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
     Route::get('/artists/categories', 'ArtistCategoryController@index')->name('admin.artists.categories.index');
 
     Route::get('/events', 'EventController@index')->name('admin.events.index');
+    Route::get('/events/archives', 'EventArchiveController@index')->name('admin.events.archives.index');
 
     Route::get('/street-data', 'StreetDataController@index')->name('admin.street_data.index');
+    Route::get('/street-data/archives', 'StreetDataArchiveController@index')->name('admin.street_data.archives.index');
 
     Route::get('/users', 'UserController@index')->name('admin.users.index');
 
