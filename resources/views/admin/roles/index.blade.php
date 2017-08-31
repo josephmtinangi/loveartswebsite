@@ -27,9 +27,21 @@
                                 <td>{{ $item }}</td>
                                 <td>Not Available</td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="#">Show</a>
+                                    <a class="btn btn-info btn-sm"
+                                        title="{{ trans('admin_roles.actions.show.title', ['role' => $item]) }}"
+                                        href="#">
 
-                                    <a class="btn btn-danger btn-sm" href="#">Delete</a>
+                                        <i class="fa fa-folder-open"></i>
+
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm"
+                                        title="{{ trans('admin_roles.actions.delete.title', ['role' => $item]) }}"
+                                        href="#">
+
+                                        <i class="fa fa-trash"></i>
+
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

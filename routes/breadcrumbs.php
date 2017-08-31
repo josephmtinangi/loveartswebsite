@@ -51,12 +51,12 @@ Breadcrumbs::register('admin.street_data.archives.index', function ($breadcrumbs
 Breadcrumbs::register('admin.users.index', function ($breadcrumbs) {
     $breadcrumbs->parent('admin.home');
 
-    $breadcrumbs->push(trans('admin_system.users.name'), route('admin.users.index'));
+    $breadcrumbs->push(trans('admin_users.name'), route('admin.users.index'));
 });
 
 // Home > System > Roles
 Breadcrumbs::register('admin.roles.index', function ($breadcrumbs) {
     $breadcrumbs->parent('admin.home');
 
-    $breadcrumbs->push(trans('admin_system.roles.name'), route('admin.roles.index'));
+    $breadcrumbs->push(trans('admin_roles.name'), route('admin.roles.index'));
 });

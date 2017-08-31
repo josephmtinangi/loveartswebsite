@@ -27,9 +27,21 @@
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->updated_at }}</td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="#">Show</a>
+                                    <a class="btn btn-info btn-sm"
+                                        title="{{ trans('admin_street_data.actions.show.title') }}"
+                                        href="#">
 
-                                    <a class="btn btn-danger btn-sm" href="#">Delete</a>
+                                        <i class="fa fa-folder-open"></i>
+
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm"
+                                        title="{{ trans('admin_street_data.actions.delete.title') }}"
+                                        href="#">
+
+                                        <i class="fa fa-trash"></i>
+
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

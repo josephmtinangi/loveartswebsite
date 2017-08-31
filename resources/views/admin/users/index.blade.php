@@ -29,13 +29,25 @@
                             <tr>
                                 <td><img class="img-circle" src="{{ $item->avatar }}" width="36" height="36"></td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ \App\Admin\Role::NORMAL }}</td>
+                                <td>{{ if_available($item->role) }}</td>
                                 <td>{{ $item->email }}</td>
-                                <td>{{ $item->mobile ?: 'Not Available' }}</td>
+                                <td>{{ if_available($item->mobile) }}</td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="#">Show</a>
+                                    <a class="btn btn-info btn-sm"
+                                        title="{{ trans('admin_users.actions.show.title', ['user' => $item->name]) }}"
+                                        href="#">
 
-                                    <a class="btn btn-danger btn-sm" href="#">Delete</a>
+                                        <i class="fa fa-folder-open"></i>
+
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm"
+                                        title="{{ trans('admin_users.actions.delete.title', ['user' => $item->name]) }}"
+                                        href="#">
+
+                                        <i class="fa fa-trash"></i>
+
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

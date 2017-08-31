@@ -70,9 +70,21 @@
                                 </td>
 
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="#">Show</a>
+                                    <a class="btn btn-info btn-sm"
+                                        title="{{ trans('admin_artists.actions.show.title', ['name' => $artist->name]) }}"
+                                        href="#">
 
-                                    <a class="btn btn-danger btn-sm" href="#">Delete</a>
+                                        <i class="fa fa-folder-open"></i>
+
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm"
+                                        title="{{ trans('admin_artists.actions.delete.title', ['name' => $artist->name]) }}"
+                                        href="#">
+
+                                        <i class="fa fa-trash"></i>
+
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

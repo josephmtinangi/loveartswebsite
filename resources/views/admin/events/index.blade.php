@@ -29,9 +29,21 @@
                                 <td>{{ $event->location }}</td>
                                 <td>{{ $event->start_date }}</td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="#">Show</a>
+                                    <a class="btn btn-info btn-sm"
+                                        title="{{ trans('admin_events.actions.show.title') }}"
+                                        href="#">
 
-                                    <a class="btn btn-danger btn-sm" href="#">Delete</a>
+                                        <i class="fa fa-folder-open"></i>
+
+                                    </a>
+
+                                    <a class="btn btn-danger btn-sm"
+                                        title="{{ trans('admin_events.actions.delete.title') }}"
+                                        href="#">
+
+                                        <i class="fa fa-trash"></i>
+
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

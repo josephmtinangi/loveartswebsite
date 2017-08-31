@@ -3,5 +3,14 @@
 return [
     'name' => 'Archives',
     'title' => 'Event Archives',
-    'descriptiion' => 'A list of all archived events',
+    'description' => 'A list of all archived events',
+    'actions' => [
+        'show' => [
+            'title' => 'View event archive',
+        ],
+
+        'delete' => [
+            'title' => 'Delete event archive',
+        ],
+    ],
 ];
