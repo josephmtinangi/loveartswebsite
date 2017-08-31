@@ -1,11 +1,15 @@
 {{--@start paginator--}}
 @if ($resource)
 
-    <div class="pagination-wrapper">
+    <center>
 
-        {!! $resource->render() !!}
+        <div class="pagination-wrapper">
 
-    </div>
+            {!! $resource->render() !!}
+
+        </div>
+
+    </center>
 
 @endif
 {{--@end paginator--}}
