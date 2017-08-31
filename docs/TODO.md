@@ -3,6 +3,8 @@
 ## Active
 
 - [ ] chore: use human readable dates
+- [ ] chore: filters scaffold
+- [ ] chore: media management scaffold
 
 
 - [ ] feat: create an event

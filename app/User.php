@@ -10,17 +10,35 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'name', 'email', 'phone',
-        'password', 'gender', 'dob', 'type', 'role',
-        'avatar', 'art_quote', 'simple_description', 'description',
-        'video_url', 'portrait_url',
-        'facebook_link', 'instagram_link', 'youtube_link', 'twitter_link',
-        'provider', 'provider_id',
-        'verified', 'verification_token'
+        'name',
+        'email',
+        'mobile',
+        'password',
+        'gender',
+        'dob',
+        'type',
+        'role',
+        'avatar',
+        'art_quote',
+        'simple_description',
+        'description',
+        'video_url',
+        'portrait_url',
+        'facebook_link',
+        'instagram_link',
+        'youtube_link',
+        'twitter_link',
+        'provider',
+        'provider_id',
+        'verified',
+        'verification_token',
     ];
-
-//    protected $dateFormat = 'Y-m-d H:i:sO';
 
     /**
      * The attributes that should be casted to native types.
@@ -29,7 +47,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'verified' => 'boolean',
-        'dob' => 'date',
     ];
 
     /**
@@ -38,12 +55,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
      * Date attributes
-     * @var [type]
+     *
+     * @var array
      */
     protected $dates = [
         'created_at',
@@ -52,8 +71,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * Date Formats
-     * @param [type] $value [description]
+     * Set the date of birth of the user.
+     *
+     * @param string $value
+     * @return void
      */
     public function setDobAttribute($value)
     {
@@ -61,6 +82,12 @@ class User extends Authenticatable
             Carbon::createFromFormat(config('app.datepicker_parse_format'), $value)->toDateString();
     }
 
+    /**
+     * Get the date of birth of the user.
+     *
+     * @param string $value
+     * @return \Carbon\Carbon
+     */
     public function getDobAttribute($value)
     {
         if (isset($value)) {
@@ -71,7 +98,8 @@ class User extends Authenticatable
 
     /**
      * Check if user has provided all required details
-     * @return boolean [description]
+     *
+     * @return boolean
      */
     public function has_all_required_details()
     {
@@ -82,7 +110,8 @@ class User extends Authenticatable
 
     /**
      * Obtain user avatar url or default user avatar
-     * @return [type] [description]
+     *
+     * @return string
      */
     public function avatar()
     {
@@ -99,7 +128,9 @@ class User extends Authenticatable
     }
 
     /**
-     * build user avatar url
+     * Build user avatar url
+     *
+     * @return string
      */
     public function avatar_url()
     {
@@ -118,6 +149,7 @@ class User extends Authenticatable
 
     /**
      * Compute user age
+     *
      * @return [type] [description]
      */
     public function age()
