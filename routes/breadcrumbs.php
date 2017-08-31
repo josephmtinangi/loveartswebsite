@@ -26,6 +26,20 @@ Breadcrumbs::register('admin.events.index', function ($breadcrumbs) {
     $breadcrumbs->push(trans('admin_events.name'), route('admin.events.index'));
 });
 
+// Home > Events > New Event
+Breadcrumbs::register('admin.events.create', function($breadcrumbs) {
+    $breadcrumbs->parent('admin.events.index');
+
+    $breadcrumbs->push(trans('admin_events.actions.create.name'), route('admin.events.create'));
+});
+
+// Home > Events > [Event Title]
+Breadcrumbs::register('admin.events.edit', function($breadcrumbs, $instance) {
+    $breadcrumbs->parent('admin.events.index');
+
+    $breadcrumbs->push(trans('admin_events.actions.update.name'), route('admin.events.edit', $instance->id));
+});
+
 // Home > Events > Archives
 Breadcrumbs::register('admin.events.archives.index', function($breadcrumbs) {
     $breadcrumbs->parent('admin.events.index');

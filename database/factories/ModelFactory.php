@@ -1,15 +1,14 @@
 <?php
 
 $factory->define(App\Event::class, function (Faker\Generator $faker) {
+    $numberBetween = $faker->numberBetween(2, 5);
+
     return [
-        'title' => $faker->sentence($faker->numberBetween(3, 5)),
-        'description' => $faker->realText(120),
-        'poster' => $faker->numberBetween(1, 19) . '.jpg',
+        'title' => $faker->sentence,
+        'description' => $faker->paragraph,
         'location' => $faker->city,
-        'url' => $faker->url,
-        'date' => $faker->dateTime,
-        'start_date' => $faker->dateTime,
-        'archived_at' => $faker->boolean ? null : $faker->dateTime,
+        'source_url' => $faker->url,
+        'start_date' => $faker->boolean ? Carbon\Carbon::now()->addDays($numberBetween) : Carbon\Carbon::now()->subDays($numberBetween),
     ];
 
 });

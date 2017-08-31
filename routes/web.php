@@ -66,6 +66,12 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
     Route::get('/artists/categories', 'ArtistCategoryController@index')->name('admin.artists.categories.index');
 
     Route::get('/events', 'EventController@index')->name('admin.events.index');
+    Route::get('/events/create', 'EventController@create')->name('admin.events.create');
+    Route::post('/events', 'EventController@store')->name('admin.events.store');
+    Route::get('/events/{event}/edit', 'EventController@edit')->name('admin.events.edit');
+    Route::put('/events/{event}', 'EventController@update')->name('admin.events.update');
+    Route::delete('/events/{event}', 'EventController@destroy')->name('admin.events.destroy');
+
     Route::get('/events/archives', 'EventArchiveController@index')->name('admin.events.archives.index');
 
     Route::get('/street-data', 'StreetDataController@index')->name('admin.street_data.index');

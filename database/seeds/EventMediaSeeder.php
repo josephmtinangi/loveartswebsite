@@ -1,0 +1,23 @@
+<?php
+
+use App\Event;
+use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
+
+class EventMediaSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Event::all()->each(function ($eventItem) {
+
+            $faker = Faker::create();
+            $eventItem->addMediaFromUrl($faker->imageUrl)->toMediaCollection('events');
+
+        });
+    }
+}

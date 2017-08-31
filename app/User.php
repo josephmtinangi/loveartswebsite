@@ -79,7 +79,7 @@ class User extends Authenticatable
     public function setDobAttribute($value)
     {
         $this->attributes['dob'] =
-            Carbon::createFromFormat(config('app.datepicker_parse_format'), $value)->toDateString();
+            Carbon::createFromFormat(config('app.date_parse_format'), $value)->toDateString();
     }
 
     /**
@@ -91,7 +91,7 @@ class User extends Authenticatable
     public function getDobAttribute($value)
     {
         if (isset($value)) {
-            $value = Carbon::parse($value)->format(config('app.datepicker_parse_format'));
+            $value = Carbon::parse($value)->format(config('app.date_parse_format'));
         }
         return $value;
     }
@@ -306,7 +306,7 @@ class User extends Authenticatable
     public static function parse_date($value)
     {
         $date = Carbon::createFromFormat(
-            config('app.datepicker_parse_format'), $value
+            config('app.date_parse_format'), $value
         );
 
         return $date;

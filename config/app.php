@@ -124,7 +124,17 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
-    'datepicker_parse_format' => 'Y-m-d',
+    /*
+    |--------------------------------------------------------------------------
+    | Date Picker Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the datetime picker parse format for your application.
+    |
+    */
+
+    'date_parse_format' => 'Y-m-d',
+    'datetime_parse_format' => 'Y-m-d H:i',
 
     /*
     |--------------------------------------------------------------------------
@@ -187,6 +197,7 @@ return [
         Laravelista\Ekko\EkkoServiceProvider::class,
         Themsaid\Langman\LangmanServiceProvider::class,
         Sven\ArtisanView\ArtisanViewServiceProvider::class,
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
     ],
 
     /*

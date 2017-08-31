@@ -12,9 +12,13 @@ if (!function_exists('if_available')) {
     function if_available($var = null, $default = 'Not Available')
     {
         if (is_string($var) && !empty($var)) {
+
             return $var;
+
         } else {
+
             return $default;
+
         }
     }
 

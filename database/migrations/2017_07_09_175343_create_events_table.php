@@ -15,15 +15,15 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('title');
-            $table->string('description');
-            $table->date('date');
-            $table->string('location');
-            $table->string('poster');
-            $table->string('url')->nullable();
+            //$table->string('poster');
+            $table->string('source_url');
+
+            $table->text('location');
+            $table->text('description');
 
             $table->dateTime('start_date');
-            $table->dateTime('archived_at')->nullable();
             $table->timestamps();
 
             $table->unique(['title', 'start_date']);

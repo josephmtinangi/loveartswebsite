@@ -12,7 +12,7 @@ class StreetDataSeeder extends Seeder
 
         if (config('app.env') == 'local') {
 
-            factory(StreetData::class, 27)->create();
+            factory(StreetData::class, 3)->create();
 
         }
     }

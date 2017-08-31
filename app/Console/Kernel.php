@@ -2,9 +2,9 @@
 
 namespace App\Console;
 
-use Spatie\MigrateFresh\Commands\MigrateFresh;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\MigrateFresh\Commands\MigrateFresh;
 
 class Kernel extends ConsoleKernel
 {

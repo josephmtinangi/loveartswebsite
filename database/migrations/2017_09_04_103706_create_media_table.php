@@ -8,25 +8,28 @@ class CreateMediaTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
         Schema::create('media', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->morphs('model');
+            $table->string('collection_name');
             $table->string('name');
-            $table->text('description');
-            $table->string('youtube_id');
-            $table->string('poster_url');
-            $table->timestamps();
+            $table->string('file_name');
+            $table->string('mime_type')->nullable();
+            $table->string('disk');
+            $table->text('manipulations');
+            $table->text('custom_properties');
+            $table->unsignedInteger('size');
+            $table->unsignedInteger('order_column')->nullable();
+
+            $table->nullableTimestamps();
         });
     }
-
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

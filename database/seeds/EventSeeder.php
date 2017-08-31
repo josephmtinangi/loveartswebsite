@@ -12,7 +12,7 @@ class EventSeeder extends Seeder
 
         if (config('app.env') == 'local') {
 
-            factory(Event::class, 27)->create();
+            factory(Event::class, 17)->create();
 
         }
     }
