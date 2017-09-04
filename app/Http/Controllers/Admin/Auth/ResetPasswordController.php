@@ -39,8 +39,9 @@ class ResetPasswordController extends BaseController
      * Display the password reset view for the given token.
      * If no token is present, display the link request form.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  Request     $request
      * @param  string|null $token
+     *
      * @return \Illuminate\View\View
      */
     public function showResetForm(Request $request, $token = null)

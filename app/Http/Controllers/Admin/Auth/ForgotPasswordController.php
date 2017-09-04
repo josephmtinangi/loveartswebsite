@@ -41,6 +41,7 @@ class ForgotPasswordController extends BaseController
      * Get the response for a successful password reset link.
      *
      * @param  string  $response
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     protected function sendResetLinkResponse($response)

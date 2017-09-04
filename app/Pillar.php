@@ -39,6 +39,7 @@ class Pillar extends Model
      * Get the pillar's name.
      *
      * @param  string $value
+     *
      * @return string
      */
     public function getNameAttribute($value)

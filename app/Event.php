@@ -198,6 +198,8 @@ class Event extends Model implements HasMediaConversions
      * {@inherited}
      *
      * @return void
+     *
+     * @see HasMediaConversions
      */
     public function registerMediaConversions()
     {

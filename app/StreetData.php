@@ -66,6 +66,7 @@ class StreetData extends Model
      * Get all active street data.
      *
      * @param  \Illuminate\Database\Query\Builder $query
+     *
      * @return \Illuminate\Database\Query\Builder
      */
     public function scopeActive($query)
@@ -77,6 +78,7 @@ class StreetData extends Model
      * Get all archived street data.
      *
      * @param  \Illuminate\Database\Query\Builder $query
+     *
      * @return \Illuminate\Database\Query\Builder
      */
     public function scopeArchived($query)
