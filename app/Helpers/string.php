@@ -5,6 +5,7 @@
  *
  * @param string $var The variable to be checked.
  * @param string $default The default string. If not specified, the default is 'Not Available'.
+ *
  * @return string
  */
 if (!function_exists('if_available')) {
