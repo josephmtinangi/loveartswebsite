@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
@@ -177,7 +176,7 @@ class Event extends Model implements HasMediaConversions
      */
     public function scopeUpComing($query)
     {
-        return $query->where('start_date', '>', Carbon::now());
+        return $query->where('start_date', '>', now());
     }
 
     /**
@@ -189,7 +188,7 @@ class Event extends Model implements HasMediaConversions
      */
     public function scopePastDue($query)
     {
-        return $query->where('start_date', '<', Carbon::now());
+        return $query->where('start_date', '<', now());
     }
 
     /**

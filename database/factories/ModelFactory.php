@@ -8,7 +8,7 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
         'description' => $faker->paragraph,
         'location' => $faker->city,
         'source_url' => $faker->url,
-        'start_date' => $faker->boolean ? Carbon\Carbon::now()->addDays($numberBetween) : Carbon\Carbon::now()->subDays($numberBetween),
+        'start_date' => $faker->boolean ? now()->addDays($numberBetween) : now()->subDays($numberBetween),
     ];
 
 });
