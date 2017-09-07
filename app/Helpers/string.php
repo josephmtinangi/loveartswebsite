@@ -24,3 +24,21 @@ if (!function_exists('if_available')) {
     }
 
 }
+
+/**
+ * Get fake image file path.
+ *
+ * @return string
+ */
+if (!function_exists('get_fake_image_path')) {
+
+    function get_fake_image_path()
+    {
+        $faker = Faker\Factory::create();
+
+        $seedImagePath = database_path('seeds/images/');
+        $fakeImagePath = $seedImagePath . $faker->numberBetween(1, 5) . '.jpg';
+
+        return $fakeImagePath;
+    }
+}
