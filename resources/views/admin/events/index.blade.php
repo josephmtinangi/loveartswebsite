@@ -21,7 +21,7 @@
                                     href="{{ route('admin.events.create') }}"
                                     title="{{ trans('admin_events.actions.create.title') }}">
 
-                                    @lang('admin_events.actions.create.name')
+                                    @lang('admin_street_data.actions.create.name')
 
                                 </a>
 
@@ -65,19 +65,19 @@
 
                     <tbody>
 
-                        @foreach($events as $event)
+                        @foreach($events as $item)
                             <tr>
-                                <td>{{ $event->title }}</td>
+                                <td>{{ $item->title }}</td>
                                 <td>
                                     <img class="img-thumbnail img-responsive"
-                                         src="{{ $event->thumb_url }}"
+                                         src="{{ $item->thumb_url }}"
                                          width="120" />
                                 </td>
-                                <td>{{ $event->location }}</td>
-                                <td>{{ $event->start_date_for_humans }}</td>
+                                <td>{{ $item->location }}</td>
+                                <td>{{ $item->start_date_for_humans }}</td>
                                 <td>
                                     <a class="btn btn-info btn-sm"
-                                       href="{{ route('admin.events.edit', $event->id) }}"
+                                       href="{{ route('admin.events.edit', $item->id) }}"
                                        title="{{ trans('admin_events.actions.update.title') }}">
 
                                         <i class="fa fa-folder-open"></i>
@@ -88,7 +88,7 @@
                                        data-method="delete"
                                        data-token="{{ csrf_token() }}"
                                        data-confirm="{{ trans('admin_events.actions.delete.confirm_message') }}"
-                                       href="{{ route('admin.events.destroy', $event->id) }}"
+                                       href="{{ route('admin.events.destroy', $item->id) }}"
                                        title="{{ trans('admin_events.actions.delete.title') }}">
 
                                         <i class="fa fa-trash"></i>

@@ -45,6 +45,7 @@ Chores:
 
 - project branding i.e. color, logo, typography
 - staging artisan command
+- refactor to Search{Resource}Controller
 
 Refactor:
 
