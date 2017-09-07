@@ -104,7 +104,6 @@ return [
 
             'title' => 'Save the event',
 
-
         ],
 
     ],
