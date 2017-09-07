@@ -29,7 +29,7 @@ return [
      * The engine that will perform the image conversions.
      * Should be either `gd` or `imagick`
      */
-    'image_driver' => 'imagick',
+    'image_driver' => 'gd',
 
     /*
      * When urls to files get generated this class will be called. Leave empty
