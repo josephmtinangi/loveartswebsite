@@ -50,4 +50,5 @@ Refactor:
 
 - create admin.layouts.partials.actionbar
 - extend admin.layouts.page.[index, create, edit, show]
-- HasSocialAttributes, trait for managing social links
+- HasSocialAttributes, trait for \*managing a model's social accounts
+- Flash notification after sending a reset password email
