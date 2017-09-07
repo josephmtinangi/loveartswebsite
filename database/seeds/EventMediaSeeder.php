@@ -15,12 +15,7 @@ class EventMediaSeeder extends Seeder
     {
         Event::all()->each(function ($eventItem) {
 
-            $faker = Faker::create();
-
-            $fakeImagePath =
-                database_path("seeds/events/") . $faker->numberBetween(1,5) . '.jpg';
-
-            $eventItem->addMedia($fakeImagePath)
+            $eventItem->addMedia(get_fake_image_path())
                       ->preservingOriginal()
                       ->toMediaCollection('events');
 
