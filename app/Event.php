@@ -30,7 +30,7 @@ class Event extends Model implements HasMediaConversions
      *
      * @var const
      */
-    const MEDIA_COLLECTION = 'events';
+    const COLLECTION_NAME = 'events';
 
     /**
      * The storage format of the model's date columns.
@@ -131,8 +131,8 @@ class Event extends Model implements HasMediaConversions
      */
     public function getPosterUrlAttribute()
     {
-        return $this->hasMedia(self::MEDIA_COLLECTION) ?
-                    $this->getFirstMedia(self::MEDIA_COLLECTION)->getUrl() : $this->getDefaultPoster();
+        return $this->hasMedia(self::COLLECTION_NAME) ?
+                    $this->getFirstMedia(self::COLLECTION_NAME)->getUrl() : $this->getDefaultPoster();
     }
 
     /**
@@ -143,8 +143,8 @@ class Event extends Model implements HasMediaConversions
      */
     public function getThumbUrlAttribute()
     {
-        return $this->hasMedia(self::MEDIA_COLLECTION) ?
-                    $this->getFirstMedia(self::MEDIA_COLLECTION)->getUrl('thumb') : $this->getDefaultPoster();
+        return $this->hasMedia(self::COLLECTION_NAME) ?
+                    $this->getFirstMedia(self::COLLECTION_NAME)->getUrl('thumb') : $this->getDefaultPoster();
     }
 
     /**

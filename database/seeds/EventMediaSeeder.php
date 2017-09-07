@@ -17,7 +17,7 @@ class EventMediaSeeder extends Seeder
 
             $eventItem->addMedia(get_fake_image_path())
                       ->preservingOriginal()
-                      ->toMediaCollection('events');
+                      ->toMediaCollection(Event::COLLECTION_NAME);
 
         });
     }
