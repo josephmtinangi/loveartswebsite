@@ -14,14 +14,10 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\StreetData::class, function (Faker\Generator $faker) {
-    $mediaIsVideo = $faker->boolean;
-    $mediaUrl = $faker->numberBetween(1, 19);
 
     return [
         'title' => $faker->sentence($faker->numberBetween(3, 5)),
         'description' => $faker->realText(120),
-        'type' => $mediaIsVideo ? 1 : 0,
-        'url' => $mediaIsVideo ? $mediaUrl . '.gif' : $mediaUrl . '.jpg',
         'archived_at' => $faker->boolean ? null : $faker->dateTime,
     ];
 

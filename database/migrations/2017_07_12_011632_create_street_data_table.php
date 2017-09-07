@@ -15,12 +15,9 @@ class CreateStreetDataTable extends Migration
     {
         Schema::create('street_data', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('title');
-            $table->text('description')->nullable();
-            $table->integer('type')->default(0);
-            $table->string('url')->nullable();
-            $table->string('placeholder_color')->default("#000");
-            $table->string('yt_id')->nullable();
+            $table->string('description');
 
             $table->dateTime('archived_at')->nullable();
             $table->timestamps();

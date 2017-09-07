@@ -3,9 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
-class StreetData extends Model
+class StreetData extends Model implements HasMediaConversions
 {
+    use HasMediaTrait, SearchableTrait;
+
     /**
      * The column by which this model is sorted.
      *
@@ -19,6 +24,13 @@ class StreetData extends Model
      * @var const
      */
     const SORT_ORDER = 'asc';
+
+    /**
+     * The name of media collection this model refers to.
+     *
+     * @var const
+     */
+    const COLLECTION_NAME = 'street_data';
 
     /**
      * The table associated with the model.
@@ -47,9 +59,49 @@ class StreetData extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'archived_at' => 'datetime',
+    protected $dates = [
+        'archived_at',
     ];
+
+    /**
+     * The rules by which this model is searchable.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        /**
+         * Columns and their priority in search results.
+         * Columns with higher values are more important.
+         * Columns with equal values have equal importance.
+         *
+         * @var array
+         */
+        'columns' => [
+            'street_data.title' => 10,
+        ],
+    ];
+
+    /**
+     * Get the original url of the street data thumb.
+     * If not found, get the public url of the default poster.
+     *
+     * @return string
+     */
+    public function getThumbUrlAttribute()
+    {
+        return $this->hasMedia(self::COLLECTION_NAME) ?
+                    $this->getFirstMedia(self::COLLECTION_NAME)->getUrl('thumb') : $this->getDefaultPoster();
+    }
+
+    /**
+     * Get the public url of the default poster.
+     *
+     * @return string
+     */
+    public function getDefaultPoster()
+    {
+        return asset('img/poster.jpg');
+    }
 
     /**
      * Begin querying the model.
@@ -84,5 +136,20 @@ class StreetData extends Model
     public function scopeArchived($query)
     {
         return $query->whereNotNull('archived_at');
+    }
+
+    /**
+     * Convert the specified attached media into a thumbnail.
+     *
+     * {@inherited}
+     *
+     * @return void
+     *
+     * @see HasMediaConversions
+     */
+    public function registerMediaConversions()
+    {
+        $this->addMediaConversion('thumb')
+             ->setManipulations(['w' => 368, 'h' => 232]);
     }
 }

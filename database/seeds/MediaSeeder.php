@@ -16,6 +16,7 @@ class MediaSeeder extends Seeder
         if (config('app.env') == 'local') {
 
             $this->call(EventMediaSeeder::class);
+            $this->call(StreetDataMediaSeeder::class);
 
         }
     }

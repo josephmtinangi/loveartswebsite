@@ -6,6 +6,52 @@
 
         <div class="col-md-12">
 
+            {{--@start actionbar--}}
+            <div class="ibox">
+
+                <div class="ibox-content">
+
+                    <div class="row m-t-md">
+
+                        <div class="col-sm-8 m-b-xs">
+
+                            <div class="btn-group">
+
+                                <a class="btn btn-primary"
+                                   href="{{ route('admin.street_data.create') }}"
+                                   title="{{ trans('admin_street_data.actions.create.title') }}">
+
+                                    @lang('admin_street_data.actions.create.name')
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-4">
+
+                            {!! Form::open(['method' => 'GET', 'route' => 'admin.street_data.index']) !!}
+
+                            {!!
+                                Form::text('q', $query, [
+                                    'class' => 'form-control',
+                                    'placeholder' => trans('admin_street_data.actions.search.placeholder')
+                                ])
+                            !!}
+
+                            {!! Form::close() !!}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            {{--@end actionbar--}}
+
+            {{--@start listview--}}
             <div class="table-responsive m-t-lg">
 
                 <table class="table table-borderless">
@@ -14,6 +60,7 @@
 
                         <tr>
                             <th>Title</th>
+                            <th>Poster</th>
                             <th>Last Modified Date</th>
                             <th>Actions</th>
                         </tr>
@@ -25,6 +72,11 @@
                         @foreach($street_data as $item)
                             <tr>
                                 <td>{{ $item->title }}</td>
+                                <td>
+                                    <img class="img-thumbnail img-responsive"
+                                         src="{{ $item->thumb_url }}"
+                                         width="120" />
+                                </td>
                                 <td>{{ $item->updated_at }}</td>
                                 <td>
                                     <a class="btn btn-info btn-sm"
@@ -49,6 +101,7 @@
                     </tbody>
 
                 </table>
+                {{--@end listview--}}
 
                 @include('admin.partials.paginator', ['resource' => $street_data])
 

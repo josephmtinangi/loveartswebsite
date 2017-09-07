@@ -40,6 +40,7 @@ Features:
 - filter events based on location, start-date
 - delete flagged artists
 - store street-data placeholder color
+- Migrate Imagick for the creation of thumbnails of svg's and pdf's
 
 Chores:
 
@@ -53,3 +54,11 @@ Refactor:
 - extend admin.layouts.page.[index, create, edit, show]
 - HasSocialAttributes, trait for \*managing a model's social accounts
 - Flash notification after sending a reset password email
+- Breadcrumbs:
+    - Home / Resource / List
+    - Home / Resource / New
+    - Home / Resource / Update
+    - Home / Resource / Show
+    - Home / Resource / Sub-Resource / New
+    - Home / Resource / Sub-Resource / Update
+

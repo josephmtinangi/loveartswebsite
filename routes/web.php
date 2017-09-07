@@ -75,6 +75,12 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
     Route::get('/events/archives', 'EventArchiveController@index')->name('admin.events.archives.index');
 
     Route::get('/street-data', 'StreetDataController@index')->name('admin.street_data.index');
+    Route::get('/street-data/create', 'StreetDataController@create')->name('admin.street_data.create');
+    Route::post('/street-data', 'StreetDataController@store')->name('admin.street_data.store');
+    Route::get('/street-data/{street_data}/edit', 'StreetDataController@edit')->name('admin.street_data.edit');
+    Route::put('/street-data/{street_data}', 'StreetDataController@update')->name('admin.street_data.update');
+    Route::delete('/street-data/{street_data}', 'StreetDataController@delete')->name('admin.street_data.delete');
+
     Route::get('/street-data/archives', 'StreetDataArchiveController@index')->name('admin.street_data.archives.index');
 
     Route::get('/users', 'UserController@index')->name('admin.users.index');
