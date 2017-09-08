@@ -12,7 +12,6 @@ Fixes:
 
 Features:
 
-- create street-data
 - create artist-category
 - create role
 - create admin-user
