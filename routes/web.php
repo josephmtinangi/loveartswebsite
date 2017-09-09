@@ -85,7 +85,7 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
     Route::post('/street-data', 'StreetDataController@store')->name('admin.street_data.store');
     Route::get('/street-data/{street_data}/edit', 'StreetDataController@edit')->name('admin.street_data.edit');
     Route::put('/street-data/{street_data}', 'StreetDataController@update')->name('admin.street_data.update');
-    Route::delete('/street-data/{street_data}', 'StreetDataController@delete')->name('admin.street_data.delete');
+    Route::delete('/street-data/{street_data}', 'StreetDataController@destroy')->name('admin.street_data.destroy');
 
     Route::get('/street-data/archives', 'StreetDataArchiveController@index')->name('admin.street_data.archives.index');
 

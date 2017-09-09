@@ -112,8 +112,7 @@ class StreetData extends Model implements HasMediaConversions
      */
     public static function query()
     {
-        return parent::query()
-            ->orderBy(self::SORT_COLUMN, self::SORT_ORDER);
+        return parent::query()->orderBy(self::SORT_COLUMN, self::SORT_ORDER);
     }
 
     /**

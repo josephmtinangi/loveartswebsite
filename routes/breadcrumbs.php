@@ -75,6 +75,13 @@ Breadcrumbs::register('admin.street_data.create', function ($breadcrumbs) {
     $breadcrumbs->push(trans('admin_street_data.name'), route('admin.street_data.create'));
 });
 
+// Home > Street Data > Update
+Breadcrumbs::register('admin.street_data.edit', function ($breadcrumbs, $instance) {
+    $breadcrumbs->parent('admin.street_data.index');
+
+    $breadcrumbs->push(trans('admin_street_data.actions.update.name'), route('admin.street_data.edit', $instance->id));
+});
+
 // Home > Street Data > Archives
 Breadcrumbs::register('admin.street_data.archives.index', function ($breadcrumbs) {
     $breadcrumbs->parent('admin.street_data.index');

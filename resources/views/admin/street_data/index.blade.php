@@ -75,21 +75,24 @@
                                 <td>
                                     <img class="img-thumbnail img-responsive"
                                          src="{{ $item->thumb_url }}"
-                                         width="120" />
+                                         width="120">
                                 </td>
                                 <td>{{ $item->updated_at }}</td>
                                 <td>
-                                    <a class="btn btn-info btn-sm"
-                                        title="{{ trans('admin_street_data.actions.show.title') }}"
-                                        href="#">
+                                    <a  class="btn btn-info btn-sm"
+                                        href="{{ route('admin.street_data.edit', $item->id) }}"
+                                        title="{{ trans('admin_street_data.actions.show.title') }}">
 
                                         <i class="fa fa-folder-open"></i>
 
                                     </a>
 
-                                    <a class="btn btn-danger btn-sm"
-                                        title="{{ trans('admin_street_data.actions.delete.title') }}"
-                                        href="#">
+                                    <a  class="btn btn-danger btn-sm"
+                                        data-method="delete"
+                                        data-token="{{ csrf_token() }}"
+                                        data-confirm="{{ trans('admin_street_data.actions.delete.confirm_message') }}"
+                                        href="{{ route('admin.street_data.destroy', $item->id) }}"
+                                        title="{{ trans('admin_street_data.actions.delete.title') }}">
 
                                         <i class="fa fa-trash"></i>
 

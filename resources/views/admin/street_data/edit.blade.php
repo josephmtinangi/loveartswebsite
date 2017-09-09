@@ -9,7 +9,7 @@
             {!!
                 Form::model($instance, [
                     'class' => 'form-horizontal',
-                    'route' => ['admin.events.update', $instance->id],
+                    'route' => ['admin.street_data.update', $instance->id],
                     'method' => 'PUT',
                     'files' => true,
                 ])
@@ -23,14 +23,14 @@
 
                         <div class="btn-toolbar pull-right" role="toolbar">
 
-                            <a class="btn btn-white" href="{{ route('admin.events.index') }}">
+                            <a class="btn btn-white" href="{{ route('admin.street_data.index') }}">
 
-                                {{ trans('admin_events.actions.cancel.title') }}
+                                {{ trans('admin_street_data.actions.cancel.title') }}
 
                             </a>
 
                             {!!
-                                Form::button(trans('admin_events.actions.update.title'), [
+                                Form::button(trans('admin_street_data.actions.update.title'), [
                                     'type' => 'submit',
                                     'class' => 'btn btn-primary',
                                 ])
@@ -40,14 +40,14 @@
                         <h2>
                             <small>
 
-                                {{ trans('admin_events.actions.update.heading') }}
+                                {{ trans('admin_street_data.actions.update.heading') }}
 
                             </small>
                         </h2>
 
                     </div>
 
-                    @include('admin.events.form')
+                    @include('admin.street_data.form')
 
                 </div>
 
