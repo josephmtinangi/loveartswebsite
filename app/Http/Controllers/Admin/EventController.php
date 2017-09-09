@@ -59,7 +59,7 @@ class EventController extends Controller
     public function store(StoreEventRequest $request)
     {
         Event::create($request->all())->addMedia($request->file('poster_url'))
-                                      ->toMediaCollection(Event::MEDIA_COLLECTION);
+                                      ->toMediaCollection(Event::COLLECTION_NAME);
 
         flash(trans('admin_events.actions.create.flash_message.success'))->success();
 
