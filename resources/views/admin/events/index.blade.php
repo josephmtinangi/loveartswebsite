@@ -21,7 +21,7 @@
                                     href="{{ route('admin.events.create') }}"
                                     title="{{ trans('admin_events.actions.create.title') }}">
 
-                                    @lang('admin_street_data.actions.create.name')
+                                    @lang('admin_events.actions.create.name')
 
                                 </a>
 
@@ -49,7 +49,7 @@
             {{--@start listview--}}
             <div class="table-responsive m-t-lg">
 
-                <table class="table table-borderless table-striped table-responsive">
+                <table class="table table-borderless table-striped">
 
                     <thead>
 
