@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+- Manage pillars
 - Manage Street Data
 - Renamed `url` to `source_url`
 - Renamed `datepicker_parse_format` to `date_parse_format`

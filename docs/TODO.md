@@ -4,58 +4,65 @@
 
 FIXES:
 
-- Fail to create thumbnails for svgs and pdfs (migrate to imagick)
-- /admin does not redirect to /admin/login if not authenticated
-- Use dropzone to upload media items.
-- Add getStartDateForHumansAttribute instead of mutating start-date attribute.
-- Provide default value for datetime picker.
-- Use fa-pencil (update) instead of fa-folder-open (view).
-- Update actions lang assets to use 'edit' instead of 'view'.
-
 FEATURES:
 
-- Manage pillars
 - Manage role
 - Manage admin-user
 - Verify artist
 - Verify artist image
 
-CHORES:
-
-- scaffold out authorization
-- figure out standard verbs i.e. [view or show, create, update or edit, delete, cancel, search]
-
 ## Queued
 
 FIXES:
 
-- Flash message, if no listing is found
+- Failed to create thumbnails for svgs and pdfs (migrate to imagick)
+- /admin does not redirect to /admin/login if not authenticated
+- Provide default value for datetime picker
+- Use fa-pencil (update) instead of fa-folder-open (view)
+- Update actions lang assets to use **edit** instead of **view**
+- Verify phpDoc is correct and useful
+- Verify breadcrumb naming consistency
+- Use @lang where appropriate
+- Use **media** where used **attachment** or **poster**
+- Use 64 x 64 for default thumbnail size
+- Street data, getLastModifiedDateForHumans
+- Flash message, if no listing is found.
+- Filter column and then the New Resource column (See GitHub Issues Page).
+- Not `ArtistPillar`, should be `Pillar` (It is its own resource).
 
 FEATURES:
 
-- notify all valid artists when new pillar is created
-- click a link to open event source-url
-- filter artists based on status, gender, pillar
-- filter events based on location, start-date
-- delete flagged artists
-- store street-data placeholder color
-- navigation translation should belong to own translation resource
+- Flash error message when validation fails
+- Update a model's media
+- Use dropzone to upload media items
+- Notify all valid artists when new pillar is created
+- Click a link to open event source-url
+- Filter artists based on status, gender, pillar
+- Filter events based on location, start-date
+- Delete flagged artists
+- Store street-data placeholder color
+- Navigation translation should belong to own translation resource
+- Create thumbnail mosaic where an entity has multiple media stored
+- List item thumbnail preview
+- Flash notification after sending a reset password email
+- Create thumbnails of multiple sizes from added media
 
 CHORES:
 
-- project branding i.e. color, logo, typography
-- staging artisan command
-- refactor to Search{Resource}Controller
+- Staging artisan command
 
 REFACTOR:
 
-- create admin.layouts.partials.actionbar
-- extend admin.layouts.page.[index, create, edit, show]
-- Sociable, trait for \*managing a model's social accounts
-- Queryable, trait for query helpers
-- Mediable, trait for media helpers
-- Flash notification after sending a reset password email
-- Routes, maybe store: /resources/new
+- What if, no table headers?
+- Refactor classes as per PHP-FIG standards
+- Project branding i.e. color, logo, typography
+- Refactor to Search{Resource}Controller
+- Figure out standard verbs i.e. [view or show, create, update or edit, delete or destroy, cancel, search]
+- Create admin.layouts.partials.actionbar
+- Extend admin.layouts.page.[index, create, edit, show]
+- Sociable, helper for managing a social accounts
+- Resource store route, maybe read `/{resource}/new`
+- Clean up how routing data i.e. title/description is presented to the view.
 - Breadcrumbs:
     - Home / Resource / List
     - Home / Resource / New
@@ -63,4 +70,3 @@ REFACTOR:
     - Home / Resource / Show
     - Home / Resource / Sub-Resource / New
     - Home / Resource / Sub-Resource / Update
-
