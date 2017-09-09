@@ -53,13 +53,21 @@ CHORES:
 
 REFACTOR:
 
+- Validate translations
+- Use `copyMedia()` instead of `addMedia(...)->preservingOriginal()`
 - What if, no table headers?
 - Refactor classes as per PHP-FIG standards
 - Project branding i.e. color, logo, typography
 - Refactor to Search{Resource}Controller
-- Figure out standard verbs i.e. [view or show, create, update or edit, delete or destroy, cancel, search]
+- Figure out standard actions (or verbs)
+    - View or show,
+    - Create
+    - Update or edit,
+    - Delete or destroy,
+    - Cancel,
+    - Search
+- Extend admin.layouts.page.[action(s)]
 - Create admin.layouts.partials.actionbar
-- Extend admin.layouts.page.[index, create, edit, show]
 - Sociable, helper for managing a social accounts
 - Resource store route, maybe read `/{resource}/new`
 - Clean up how routing data i.e. title/description is presented to the view.
