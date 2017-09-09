@@ -17,6 +17,7 @@ class MediaSeeder extends Seeder
 
             $this->call(EventMediaSeeder::class);
             $this->call(StreetDataMediaSeeder::class);
+            $this->call(ArtistPillarMediaSeeder::class);
 
         }
     }

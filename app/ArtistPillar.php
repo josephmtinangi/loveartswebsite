@@ -27,6 +27,13 @@ class ArtistPillar extends Model implements HasMediaConversions
     const SORT_ORDER = 'desc';
 
     /**
+     * The name of media collection this model refers to.
+     *
+     * @var const
+     */
+    const COLLECTION_NAME = 'events';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -34,7 +41,36 @@ class ArtistPillar extends Model implements HasMediaConversions
     protected $fillable = [
         'name',
         'description',
-        'image_url',
+    ];
+
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
+    /**
+     * The rules by which this model is searchable.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        /**
+         * Columns and their priority in search results.
+         * Columns with higher values are more important.
+         * Columns with equal values have equal importance.
+         *
+         * @var array
+         */
+        'columns' => [
+            'artist_pillars.name' => 10,
+            'artist_pillars.description' => 7,
+        ],
     ];
 
     /**
@@ -47,6 +83,18 @@ class ArtistPillar extends Model implements HasMediaConversions
     public function getNameAttribute($value)
     {
         return ucfirst($value);
+    }
+
+    /**
+     * Get the original url of the event poster thumb.
+     * If not found, get the public url of the default poster.
+     *
+     * @return string
+     */
+    public function getThumbUrlAttribute()
+    {
+        return $this->hasMedia(self::COLLECTION_NAME) ?
+                    $this->getFirstMedia(self::COLLECTION_NAME)->getUrl('thumb') : $this->getDefaultPoster();
     }
 
     /**
@@ -71,6 +119,18 @@ class ArtistPillar extends Model implements HasMediaConversions
     public function registerMediaConversions()
     {
         $this->addMediaConversion('thumb')
-             ->setManipulations(['w' => 368, 'h' => 232]);
+             ->setManipulations(['w' => 64, 'h' => 64]);
+    }
+
+    /**
+     * Build a query for artist pillars.
+     *
+     * {@inherited}
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public static function query()
+    {
+        return parent::query()->orderBy(self::SORT_COLUMN, self::SORT_ORDER);
     }
 }

@@ -63,7 +63,13 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
     });
 
     Route::get('/artists', 'ArtistController@index')->name('admin.artists.index');
+
     Route::get('/artists/pillars', 'ArtistPillarController@index')->name('admin.artists.pillars.index');
+    Route::get('/artists/create', 'ArtistPillarController@create')->name('admin.artists.pillars.create');
+    Route::post('/artists/pillars', 'ArtistPillarController@store')->name('admin.artists.pillars.store');
+    Route::get('/artists/pillars/{pillar}/edit', 'ArtistPillarController@edit')->name('admin.artists.pillars.edit');
+    Route::put('/artists/pillars/{pillar}', 'ArtistPillarController@update')->name('admin.artists.pillars.update');
+    Route::delete('/artists/pillars/{pillar}', 'ArtistPillarController@destroy')->name('admin.artists.pillars.destroy');
 
     Route::get('/events', 'EventController@index')->name('admin.events.index');
     Route::get('/events/create', 'EventController@create')->name('admin.events.create');

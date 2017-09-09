@@ -108,11 +108,17 @@ return [
 
     'inputs' => [
 
-        'title' => [
+        'name' => [
 
-            'help_block' => 'The title of the pillar',
+            'help_block' => 'The name of the pillar',
 
-            'placeholder' => 'Pillar title',
+            'placeholder' => 'Pillar name',
+
+        ],
+
+        'media' => [
+
+            'help_block' => 'Attach a media file',
 
         ],
 
@@ -121,6 +127,7 @@ return [
             'help_block' => 'What is so special about this pillar?',
 
             'placeholder' => 'Description',
+
         ],
 
     ],

@@ -12,11 +12,25 @@ Breadcrumbs::register('admin.artists.index', function ($breadcrumbs) {
     $breadcrumbs->push(trans('admin_artists.name'), route('admin.artists.index'));
 });
 
-// Home > Artist > Categories
+// Home > Artists > Pillars
 Breadcrumbs::register('admin.artists.pillars.index', function ($breadcrumbs) {
     $breadcrumbs->parent('admin.artists.index');
 
     $breadcrumbs->push(trans('admin_artists_pillars.name'), route('admin.artists.pillars.index'));
+});
+
+// Home > Artists > Pillars > New
+Breadcrumbs::register('admin.artists.pillars.create', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.artists.pillars.index');
+
+    $breadcrumbs->push(trans('admin_artists_pillars.actions.create.name'), route('admin.artists.pillars.create'));
+});
+
+// Home > Artists > Pillars > Edit
+Breadcrumbs::register('admin.artists.pillars.edit', function ($breadcrumbs, $instance) {
+    $breadcrumbs->parent('admin.artists.pillars.index');
+
+    $breadcrumbs->push(trans('admin_artists_pillars.actions.update.name'), route('admin.artists.pillars.edit', $instance->id));
 });
 
 // Home > Events
