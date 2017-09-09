@@ -89,8 +89,10 @@ class StreetData extends Model implements HasMediaConversions
      */
     public function getThumbUrlAttribute()
     {
-        return $this->hasMedia(self::COLLECTION_NAME) ?
-                    $this->getFirstMedia(self::COLLECTION_NAME)->getUrl('thumb') : $this->getDefaultPoster();
+        return $this->hasMedia(self::COLLECTION_NAME)
+            ? $this->getFirstMedia(self::COLLECTION_NAME)
+                   ->getUrl('thumb')
+            : $this->getDefaultPoster();
     }
 
     /**
