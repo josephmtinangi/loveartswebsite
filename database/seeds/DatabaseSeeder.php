@@ -2,19 +2,20 @@
 
 use Illuminate\Database\Seeder;
 
-use Admin\UserSeeder;
+use Admin\UserSeeder as AdminSeeder;
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        $this->call(PillarsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(ArtistImagesTableSeeder::class);
 
+        $this->call(ArtistPillarSeeder::class);
         $this->call(EventSeeder::class);
         $this->call(StreetDataSeeder::class);
-        $this->call(UserSeeder::class);
+
+        $this->call(AdminSeeder::class);
 
         $this->call(MediaSeeder::class);
     }

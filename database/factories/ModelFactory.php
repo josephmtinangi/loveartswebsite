@@ -1,5 +1,13 @@
 <?php
 
+$factory->define(App\ArtistPillar::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name,
+        'description' => $faker->paragraph,
+    ];
+});
+
 $factory->define(App\Event::class, function (Faker\Generator $faker) {
     $numberBetween = $faker->numberBetween(2, 5);
 

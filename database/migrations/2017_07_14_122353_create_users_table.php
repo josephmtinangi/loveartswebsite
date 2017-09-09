@@ -41,11 +41,6 @@ class CreateUsersTable extends Migration
 
             $table->integer('role')->default(0);
             $table->integer('pillar_id')->unsigned()->default(1);
-
-            $table->foreign('pillar_id')
-                ->references('id')
-                ->on('pillars')
-                ->onDelete('cascade');
         });
     }
 

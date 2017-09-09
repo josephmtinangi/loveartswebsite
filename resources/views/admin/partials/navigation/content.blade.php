@@ -21,8 +21,8 @@
         </li>
 
         <li>
-            <a href="{{ route('admin.artists.categories.index') }}">
-                {{ trans('admin_navigation.content.artists.categories') }}
+            <a href="{{ route('admin.artists.pillars.index') }}">
+                {{ trans('admin_navigation.content.artists.pillars') }}
             </a>
         </li>
     </ul>

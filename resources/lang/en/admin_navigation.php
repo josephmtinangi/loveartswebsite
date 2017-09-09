@@ -25,7 +25,7 @@ return [
         'artists' => [
             'label' => 'Artists',
             'list' => 'List',
-            'categories' => 'Categories',
+            'pillars' => 'Pillars',
         ],
 
         'events' => [

@@ -2,57 +2,60 @@
 
 ## Active
 
-Fixes:
+FIXES:
 
-- use dropzone to upload media items.
-- add getStartDateForHumansAttribute instead of mutating start-date attribute.
-- provide default value for datetime picker.
-- use fa-pencil (update) instead of fa-folder-open (view).
-- update actions lang assets to use 'edit' instead of 'view'.
+- Fail to create thumbnails for svgs and pdfs (migrate to imagick)
+- /admin does not redirect to /admin/login if not authenticated
+- Use dropzone to upload media items.
+- Add getStartDateForHumansAttribute instead of mutating start-date attribute.
+- Provide default value for datetime picker.
+- Use fa-pencil (update) instead of fa-folder-open (view).
+- Update actions lang assets to use 'edit' instead of 'view'.
 
-Features:
+FEATURES:
 
-- create artist-category
-- create role
-- create admin-user
-- verify artist
-- verify artist image
+- Manage pillars
+- Manage role
+- Manage admin-user
+- Verify artist
+- Verify artist image
 
-Chores:
+CHORES:
 
-- flash message, if no listing is found
-- scaffold out resource filters
 - scaffold out authorization
-- scaffold out media management
-- figure out universal verbs i.e. [view or show, create, update or edit, delete, cancel, search]
+- figure out standard verbs i.e. [view or show, create, update or edit, delete, cancel, search]
 
 ## Queued
 
-Fixes:
+FIXES:
 
-- /admin does not redirect to /admin/login if not authenticated
+- Flash message, if no listing is found
 
-Features:
+FEATURES:
 
+- notify all valid artists when new pillar is created
 - click a link to open event source-url
-- filter artists based on status, gender, category
+- filter artists based on status, gender, pillar
 - filter events based on location, start-date
 - delete flagged artists
 - store street-data placeholder color
-- Migrate Imagick for the creation of thumbnails of svg's and pdf's
+- navigation translation should belong to own translation resource
 
-Chores:
+CHORES:
 
 - project branding i.e. color, logo, typography
 - staging artisan command
 - refactor to Search{Resource}Controller
 
-Refactor:
+REFACTOR:
 
 - create admin.layouts.partials.actionbar
 - extend admin.layouts.page.[index, create, edit, show]
-- HasSocialAttributes, trait for \*managing a model's social accounts
+- Sociable, trait for \*managing a model's social accounts
+- Queryable, trait for query helpers
+- Mediable, trait for media helpers
 - Flash notification after sending a reset password email
+- Routes, maybe store: /resources/new
 - Breadcrumbs:
     - Home / Resource / List
     - Home / Resource / New

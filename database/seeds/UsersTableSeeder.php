@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\ArtistPillar;
 use App\User;
 
 class UsersTableSeeder extends Seeder
@@ -13,7 +14,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        $types = App\Pillar::all()->modelKeys();
+        $types = ArtistPillar::all()->modelKeys();
         $users = [
             [
                 "name" => "Asteria Damian",

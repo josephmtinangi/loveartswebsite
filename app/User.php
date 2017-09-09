@@ -2,9 +2,9 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -313,15 +313,18 @@ class User extends Authenticatable
 
     }
 
-    public function images(){
-        return $this->HasMany('App\ArtistImage');
+    public function images()
+    {
+        return $this->hasMany(ArtistImage::class);
     }
 
-    public function pillar(){
-        return $this->belongsTo('App\Pillar');
+    public function pillar()
+    {
+        return $this->belongsTo(Pillar::class);
     }
 
-    public function type(){
+    public function type()
+    {
         return $this->pillar()->first();
     }
 

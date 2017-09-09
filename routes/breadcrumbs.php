@@ -13,10 +13,10 @@ Breadcrumbs::register('admin.artists.index', function ($breadcrumbs) {
 });
 
 // Home > Artist > Categories
-Breadcrumbs::register('admin.artists.categories.index', function ($breadcrumbs) {
+Breadcrumbs::register('admin.artists.pillars.index', function ($breadcrumbs) {
     $breadcrumbs->parent('admin.artists.index');
 
-    $breadcrumbs->push(trans('admin_artists_categories.name'), route('admin.artists.categories.index'));
+    $breadcrumbs->push(trans('admin_artists_pillars.name'), route('admin.artists.pillars.index'));
 });
 
 // Home > Events
