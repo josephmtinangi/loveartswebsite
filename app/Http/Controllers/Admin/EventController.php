@@ -52,7 +52,7 @@ class EventController extends Controller
     /**
      * Store a newly created event in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param StoreEventRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
