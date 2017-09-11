@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- List pending artists
+- List verified artists
 - Manage pillars
 - Manage Street Data
 - Renamed `url` to `source_url`

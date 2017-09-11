@@ -15,6 +15,7 @@ FEATURES:
 
 FIXES:
 
+- Display 'Not Available' if no social media found
 - Failed to create thumbnails for svgs and pdfs (migrate to imagick)
 - /admin does not redirect to /admin/login if not authenticated
 - Provide default value for datetime picker
@@ -27,11 +28,13 @@ FIXES:
 - Use 64 x 64 for default thumbnail size
 - Street data, getLastModifiedDateForHumans
 - Flash message, if no listing is found.
-- Filter column and then the New Resource column (See GitHub Issues Page).
-- Not `ArtistPillar`, should be `Pillar` (It is its own resource).
+- Filter column and then the New Resource column (See GitHub Issues Page)
+- Not `ArtistPillar`, should be `Pillar` (It is its own resource)
+- Use media-library to manage avatars (both, default and custom)
 
 FEATURES:
 
+- Soft deleting
 - Flash error message when validation fails
 - Update a model's media
 - Use dropzone to upload media items
@@ -53,6 +56,7 @@ CHORES:
 
 REFACTOR:
 
+- ValidatesUrlScheme should be a custom validation rule
 - Validate translations
 - Use `copyMedia()` instead of `addMedia(...)->preservingOriginal()`
 - What if, no table headers?
@@ -70,7 +74,7 @@ REFACTOR:
 - Create admin.layouts.partials.actionbar
 - Sociable, helper for managing a social accounts
 - Resource store route, maybe read `/{resource}/new`
-- Clean up how routing data i.e. title/description is presented to the view.
+- Clean up how routing data i.e. title/description is presented to the view
 - Breadcrumbs:
     - Home / Resource / List
     - Home / Resource / New
