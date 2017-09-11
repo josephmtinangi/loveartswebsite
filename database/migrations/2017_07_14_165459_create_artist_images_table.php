@@ -19,11 +19,6 @@ class CreateArtistImagesTable extends Migration
             $table->string('url');
             $table->boolean('verified')->default(false);
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
         });
     }
 
