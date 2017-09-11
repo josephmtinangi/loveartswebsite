@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\ArtistPillar;
 use App\ValidatesUrlScheme;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
@@ -10,6 +11,20 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable, ValidatesUrlScheme;
+
+    /**
+     * The column by which this model is sorted.
+     *
+     * @var const
+     */
+    const SORT_COLUMN = 'name';
+
+    /**
+     * The order by which this model is sorted.
+     *
+     * @var const
+     */
+    const SORT_ORDER = 'asc';
 
     /**
      * The attributes that are mass assignable.
@@ -37,8 +52,8 @@ class User extends Authenticatable
         'twitter_link',
         'provider',
         'provider_id',
-        'verified',
         'verification_token',
+        'verified_at',
     ];
 
     /**
@@ -68,6 +83,7 @@ class User extends Authenticatable
     protected $dates = [
         'created_at',
         'updated_at',
+        'verified_at',
         'dob',
     ];
 
@@ -318,42 +334,97 @@ class User extends Authenticatable
 
     }
 
+    /**
+     * Begin querying the model.
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public static function query()
+    {
+        return parent::query(self::SORT_COLUMN, self::SORT_ORDER);
+    }
+
+    /**
+     * Get images associated with this model.
+     *
+     * @return  \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function images()
     {
         return $this->hasMany(ArtistImage::class);
     }
 
+    /**
+     * Get pillar associated with this model.
+     *
+     * @return  \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function pillar()
     {
-        return $this->belongsTo(Pillar::class);
+        return $this->belongsTo(ArtistPillar::class);
     }
 
+    /**
+     * @return Collection
+     */
     public function type()
     {
         return $this->pillar()->first();
     }
 
+    /**
+     * @return null
+     */
     public function setFacebookLinkAttribute($value)
     {
         $this->attributes['facebook_link'] =
             $this->getValidUrl($value);
     }
 
+    /**
+     * @return null
+     */
     public function setInstagramLinkAttribute($value)
     {
         $this->attributes['instagram_link'] =
             $this->getValidUrl($value);
     }
 
+    /**
+     * @return null
+     */
     public function setYouTubeLinkAttribute($value)
     {
         $this->attributes['youtube_link'] =
             $this->getValidUrl($value);
     }
 
+    /**
+     * @return null
+     */
     public function setTwitterLinkAttribute($value)
     {
         $this->attributes['twitter_link'] =
             $this->getValidUrl($value);
+    }
+
+    /**
+     * Build a query for all verified users.
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopeVerified()
+    {
+        return self::query()->whereNotNull('verified_at');
+    }
+
+    /**
+     * Build a query for all users waiting verification.
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopePending()
+    {
+        return self::query()->whereNull('verified_at');
     }
 }
