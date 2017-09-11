@@ -6,8 +6,6 @@ FIXES:
 
 FEATURES:
 
-- Verify artist
-- Verify artist image
 
 ## Queued
 
@@ -32,6 +30,7 @@ FIXES:
 
 FEATURES:
 
+- Verify artist image
 - Display the date the specified resource was archived
 - Manage system roles
 - Soft deleting

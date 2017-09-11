@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+- Verify artist
 - List pending artists
 - List verified artists
 - Manage pillars
