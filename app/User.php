@@ -2,13 +2,14 @@
 
 namespace App;
 
+use App\ValidatesUrlScheme;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, ValidatesUrlScheme;
 
     /**
      * The attributes that are mass assignable.
@@ -328,39 +329,27 @@ class User extends Authenticatable
         return $this->pillar()->first();
     }
 
-    public function setFacebookLinkAttribute($url)
+    public function setFacebookLinkAttribute($value)
     {
-        $this->attributes['facebook_link'] = $this->validateUrlScheme($url);
+        $this->attributes['facebook_link'] =
+            $this->getValidUrl($value);
     }
 
-    public function setInstagramLinkAttribute($url)
+    public function setInstagramLinkAttribute($value)
     {
-        $this->attributes['instagram_link'] = $this->validateUrlScheme($url);
+        $this->attributes['instagram_link'] =
+            $this->getValidUrl($value);
     }
 
-    public function setYouTubeLinkAttribute($url)
+    public function setYouTubeLinkAttribute($value)
     {
-        $this->attributes['youtube_link'] = $this->validateUrlScheme($url);
+        $this->attributes['youtube_link'] =
+            $this->getValidUrl($value);
     }
 
-    public function setTwitterLinkAttribute($url)
+    public function setTwitterLinkAttribute($value)
     {
-        $this->attributes['twitter_link'] = $this->validateUrlScheme($url);
-    }
-
-    private function validateUrlScheme($url, $protocol = "https")
-    {
-        if(!is_null($url)) {
-          $delim = "://";
-          $arr = explode($delim, $url);
-
-          if (sizeof($arr) == 1) {
-
-              return $protocol . $delim . $url;
-
-          }
-
-          return $url;
-        }
+        $this->attributes['twitter_link'] =
+            $this->getValidUrl($value);
     }
 }
