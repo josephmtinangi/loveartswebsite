@@ -18,7 +18,6 @@
                             <th>Email</th>
                             <th>Gender</th>
                             <th>Category</th>
-                            <th>Status</th>
                             <th>Social Media</th>
                             <th>Actions</th>
                         </tr>
@@ -34,7 +33,6 @@
                                 <td>{{ $artist->email }}</td>
                                 <td>{{ if_available($artist->gender) }}</td>
                                 <td>{{ if_available($artist->category) }}</td>
-                                <TD>{{ if_available($artist->status, 'Pending') }}</td>
                                 <td>
                                     @if ($artist->facebook_link)
                                         <a class="btn btn-link" href="{{ $artist->facebook_link }}" target="_blank">

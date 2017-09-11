@@ -4,6 +4,8 @@
             {{ trans('admin_navigation.content.home.label') }}
         </span>
     </a>
+</li>
+
 <li>
     <a href="#">
         <span class="nav-label">
