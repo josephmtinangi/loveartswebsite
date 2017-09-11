@@ -17,8 +17,14 @@
 
     <ul class="nav nav-second-level">
         <li>
-            <a href="{{ route('admin.artists.index') }}">
-                {{ trans('admin_navigation.content.artists.list') }}
+            <a href="{{ route('admin.artists.verified') }}">
+                {{ trans('admin_navigation.content.artists.verified') }}
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('admin.artists.pending') }}">
+                {{ trans('admin_navigation.content.artists.pending') }}
             </a>
         </li>
 

@@ -24,7 +24,8 @@ return [
 
         'artists' => [
             'label'     => 'Artists',
-            'list'      => 'List',
+            'verified'  => 'Verified Artists',
+            'pending'   => 'Pending Artists',
             'pillars'   => 'Pillars',
         ],
 

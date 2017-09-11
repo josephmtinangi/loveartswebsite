@@ -62,10 +62,17 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
         return redirect()->route('admin.home');
     });
 
-    Route::get('/artists', 'ArtistController@index')->name('admin.artists.index');
+    Route::get('/artists', function() {
+
+        return redirect()->route('admin.artists.verified');
+
+    })->name('admin.artists.index');
+
+    Route::get('/artists/verified', 'VerifiedArtistController@getVerifiedArtists')->name('admin.artists.verified');
+    Route::get('/artists/pending', 'PendingArtistController@getPendingArtists')->name('admin.artists.pending');
 
     Route::get('/artists/pillars', 'ArtistPillarController@index')->name('admin.artists.pillars.index');
-    Route::get('/artists/create', 'ArtistPillarController@create')->name('admin.artists.pillars.create');
+    Route::get('/artists/pillars/create', 'ArtistPillarController@create')->name('admin.artists.pillars.create');
     Route::post('/artists/pillars', 'ArtistPillarController@store')->name('admin.artists.pillars.store');
     Route::get('/artists/pillars/{pillar}/edit', 'ArtistPillarController@edit')->name('admin.artists.pillars.edit');
     Route::put('/artists/pillars/{pillar}', 'ArtistPillarController@update')->name('admin.artists.pillars.update');
