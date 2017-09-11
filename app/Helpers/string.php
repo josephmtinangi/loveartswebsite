@@ -30,9 +30,9 @@ if (!function_exists('if_available')) {
  *
  * @return string
  */
-if (!function_exists('get_fake_image_path')) {
+if (!function_exists('get_fake_image')) {
 
-    function get_fake_image_path()
+    function get_fake_image()
     {
         $faker = Faker\Factory::create();
 

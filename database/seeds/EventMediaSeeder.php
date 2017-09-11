@@ -6,16 +6,11 @@ use Illuminate\Database\Seeder;
 
 class EventMediaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         Event::all()->each(function ($eventItem) {
 
-            $eventItem->addMedia(get_fake_image_path())
+            $eventItem->addMedia(get_fake_image())
                       ->preservingOriginal()
                       ->toMediaCollection(Event::COLLECTION_NAME);
 
