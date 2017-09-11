@@ -41,6 +41,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
 
             $table->date('dob')->nullable();
+            $table->date('verified_at')->nullable();
             $table->timestamps();
 
             $table->integer('role')->default(0);
