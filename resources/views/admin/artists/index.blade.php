@@ -6,6 +6,35 @@
 
         <div class="col-md-12">
 
+            {{--@start actionbar--}}
+            <div class="ibox">
+
+                <div class="ibox-content">
+
+                    <div class="row m-t-md">
+
+                        <div class="col-sm-offset-8 col-sm-4">
+
+                            {!! Form::open(['method' => 'GET', 'route' => 'admin.artists.verified']) !!}
+
+                            {!!
+                                Form::text('q', $query, [
+                                    'class' => 'form-control',
+                                    'placeholder' => trans('admin_artists.actions.search.placeholder'),
+                                ])
+                            !!}
+
+                            {!! Form::close() !!}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            {{--@end actionbar--}}
+
             <div class="table-responsive m-t-lg">
 
                 <table class="table table-borderless table-responsive">

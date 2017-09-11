@@ -7,10 +7,11 @@ use App\ValidatesUrlScheme;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class User extends Authenticatable
 {
-    use Notifiable, ValidatesUrlScheme;
+    use Notifiable, SearchableTrait, ValidatesUrlScheme;
 
     /**
      * The column by which this model is sorted.
@@ -85,6 +86,25 @@ class User extends Authenticatable
         'updated_at',
         'verified_at',
         'dob',
+    ];
+
+    /**
+     * The rules by which this model is searchable.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        /**
+         * Columns and their priority in search results.
+         * Columns with higher values are more important.
+         * Columns with equal values have equal importance.
+         *
+         * @var array
+         */
+        'columns' => [
+            'users.name' => 10,
+            'users.email' => 7,
+        ],
     ];
 
     /**

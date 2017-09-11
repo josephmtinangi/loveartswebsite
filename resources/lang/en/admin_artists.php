@@ -37,5 +37,11 @@ return [
             'title' => 'Delete :name',
 
         ],
+
+        'search' => [
+
+            'placeholder' => 'Search for artists by their name or email',
+        ],
+
     ],
 ];
