@@ -6,8 +6,6 @@ FIXES:
 
 FEATURES:
 
-- Manage role
-- Manage admin-user
 - Verify artist
 - Verify artist image
 
@@ -34,6 +32,7 @@ FIXES:
 
 FEATURES:
 
+- Manage system roles
 - Soft deleting
 - Flash error message when validation fails
 - Update a model's media

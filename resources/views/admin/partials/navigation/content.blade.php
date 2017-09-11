@@ -82,26 +82,26 @@
     </ul>
 </li>
 
-<li>
-    <a href="#">
-        <span class="nav-label">
-            {{ trans('admin_navigation.content.system.label') }}
-        </span>
+{{--<li>--}}
+    {{--<a href="#">--}}
+        {{--<span class="nav-label">--}}
+            {{--{{ trans('admin_navigation.content.system.label') }}--}}
+        {{--</span>--}}
 
-        <span class="fa arrow"></span>
-    </a>
+        {{--<span class="fa arrow"></span>--}}
+    {{--</a>--}}
 
-    <ul class="nav nav-second-level">
-        <li>
-            <a href="{{ route('admin.users.index') }}">
-                {{ trans('admin_navigation.content.system.users') }}
-            </a>
-        </li>
+    {{--<ul class="nav nav-second-level">--}}
+        {{--<li>--}}
+            {{--<a href="{{ route('admin.users.index') }}">--}}
+                {{--{{ trans('admin_navigation.content.system.users') }}--}}
+            {{--</a>--}}
+        {{--</li>--}}
 
-        <li>
-            <a href="{{ route('admin.roles.index') }}">
-                {{ trans('admin_navigation.content.system.roles') }}
-            </a>
-        </li>
-    </ul>
-</li>
+        {{--<li>--}}
+            {{--<a href="{{ route('admin.roles.index') }}">--}}
+                {{--{{ trans('admin_navigation.content.system.roles') }}--}}
+            {{--</a>--}}
+        {{--</li>--}}
+    {{--</ul>--}}
+{{--</li>--}}
