@@ -32,6 +32,7 @@ FIXES:
 
 FEATURES:
 
+- Display the date the specified resource was archived
 - Manage system roles
 - Soft deleting
 - Flash error message when validation fails
@@ -55,6 +56,7 @@ CHORES:
 
 REFACTOR:
 
+- To stripe, or not to stripe tables
 - ValidatesUrlScheme should be a custom validation rule
 - Validate translations
 - Use `copyMedia()` instead of `addMedia(...)->preservingOriginal()`

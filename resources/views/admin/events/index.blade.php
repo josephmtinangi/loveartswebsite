@@ -49,7 +49,7 @@
             {{--@start listview--}}
             <div class="table-responsive m-t-lg">
 
-                <table class="table table-borderless table-striped">
+                <table class="table table-borderless">
 
                     <thead>
 

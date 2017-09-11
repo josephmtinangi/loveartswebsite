@@ -37,7 +37,7 @@
 
             <div class="table-responsive m-t-lg">
 
-                <table class="table table-borderless table-responsive">
+                <table class="table table-borderless">
 
                     <thead>
 
