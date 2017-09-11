@@ -306,6 +306,10 @@ class User extends Authenticatable
         }
     }
 
+    /**
+     * @param   string  $value
+     * @return  Carbon
+     */
     public static function parse_date($value)
     {
         $date = Carbon::createFromFormat(config('app.date_parse_format'), $value);
