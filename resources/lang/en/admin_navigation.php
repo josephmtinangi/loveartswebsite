@@ -24,21 +24,21 @@ return [
 
         'artists' => [
             'label'     => 'Artists',
-            'verified'  => 'Verified Artists',
-            'pending'   => 'Pending Artists',
+            'verified'  => 'Verified',
+            'pending'   => 'Pending',
             'pillars'   => 'Pillars',
         ],
 
         'events' => [
             'label'     => 'Events',
-            'list'      => 'List',
+            'list'      => 'Upcoming',
             'archives'  => 'Archives',
         ],
 
         'street_data' => [
             'label'     => 'Street Data',
-            'list'      => 'List',
-            'archives'  =>  'Archives',
+            'list'      => 'Active',
+            'archives'  => 'Archives',
         ],
 
         'system' => [
