@@ -11,14 +11,25 @@ class PendingArtistController extends Controller
     /**
      * Display a listing of all artists waiting verification.
      *
-     * @return \Illuminate\View\View
+     * @param   Request                 $request
+     *
+     * @return  \Illuminate\View\View
      */
-    public function getPendingArtists()
+    public function getPendingArtists(Request $request)
     {
-        return view('admin.artists.index', [
+        // build a query for pending artists
+        $builder = User::query()->pending();
+
+        $query = $request->input('q', '');
+        if (!empty($query)) {
+            $builder = $builder->search($query);
+        }
+
+        return view('admin.artists.pending', [
             'route_title'       => trans('admin_artists.pending.title'),
             'route_description' => trans('admin_artists.description'),
-            'artists'           => User::query()->pending()->paginate(),
+            'artists'           => $builder->paginate(),
+            'query'             => $query,
         ]);
     }
 }
