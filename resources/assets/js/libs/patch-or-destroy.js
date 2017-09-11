@@ -1,21 +1,22 @@
 /**
- * JavaScript helper to destroy a laravel resource.
+ * JavaScript helper to patch or destroy a laravel resource.
  *
  * Usage:
  *
+ *  Patch a resource:
+ *  <a href="posts/2" data-method="patch" data-token="{{ csrf_token() }}"> ... </a>
+ *
+ *  Destroy a resource:
  *  <a href="posts/2" data-method="delete" data-token="{{ csrf_token() }}"> ... </a>
  *
- * Or, request confirmation in the process
- *
+ * Or, request confirmation in the process:
  *  <a href="posts/2"
- *     data-method="delete"
- *     data-token="{{ csrf_token() }}"
  *     data-confirm="Are you sure?"> ... </a>
  */
 
 $(function() {
 
-    var destroy = {
+    var resource = {
         init: function() {
             this.methodLinks = $('a[data-method]');
             this.token = $('a[data-token]');
@@ -31,19 +32,25 @@ $(function() {
             var httpMethod = link.data('method').toUpperCase();
             var form;
 
-            // Ignore action if the data-method is not DELETE.
-            if (httpMethod !== 'DELETE') {
+            // Ignore action if the data-method is not PATCH or DELETE.
+            if ($.inArray(httpMethod, ['PATCH', 'DELETE']) === -1) {
+
                 return;
+
             }
 
             // If available, handle the optional data-confirm.
             if (link.data('confirm')) {
-                if (!destroy.verifyConfirm(link)) {
+
+                if (!resource.verifyConfirm(link)) {
+
                     return false;
+
                 }
+
             }
 
-            form = destroy.createForm(link);
+            form = resource.createForm(link);
             form.submit();
 
             e.preventDefault();
@@ -78,5 +85,5 @@ $(function() {
         }
     };
 
-    destroy.init();
+    resource.init();
 });

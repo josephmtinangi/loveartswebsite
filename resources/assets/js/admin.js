@@ -13,6 +13,6 @@ require('./theme');
  * Require custom-made libraries
  */
 require('./libs/ajax');
-require('./libs/destroy');
-require('./libs/textarea');
 require('./libs/datetimepicker');
+require('./libs/patch-or-destroy');
+require('./libs/textarea');
