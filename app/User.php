@@ -61,7 +61,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Date attributes
+     * The attributes that should be casted to date.
      *
      * @var array
      */
@@ -74,8 +74,9 @@ class User extends Authenticatable
     /**
      * Set the date of birth of the user.
      *
-     * @param string $value
-     * @return void
+     * @param   string  $value
+     *
+     * @return  void
      */
     public function setDobAttribute($value)
     {
@@ -86,8 +87,9 @@ class User extends Authenticatable
     /**
      * Get the date of birth of the user.
      *
-     * @param string $value
-     * @return \Carbon\Carbon
+     * @param   string  $value
+     *
+     * @return  Carbon
      */
     public function getDobAttribute($value)
     {
@@ -260,11 +262,13 @@ class User extends Authenticatable
     }
 
     /**
-     * strip unwanted avatar url extra & return url to obtain
+     * Strip unwanted avatar url extra & return url to obtain
      * original user profile avatar
-     * @param  [string] $avatar   [description]
-     * @param  [string] $provider [description]
-     * @return [string]           [description]
+     *
+     * @param   string  $avatar
+     * @param   string  $provider
+     *
+     * @return  string
      */
     public static function getProviderOriginalAvatar($avatar, $provider)
     {
@@ -283,9 +287,11 @@ class User extends Authenticatable
     }
 
     /**
-     * Find existing user by email
-     * @param  [string] $email [description]
-     * @return [User]        [description]
+     * Find an existing user by specified email.
+     *
+     * @param   string      $email
+     *
+     * @return  string|null
      */
     public static function findByEmail($email = null)
     {
@@ -299,11 +305,6 @@ class User extends Authenticatable
         }
     }
 
-    /**
-     * Parse date from system format to carbon date
-     * @param  [type] $value [description]
-     * @return [type]        [description]
-     */
     public static function parse_date($value)
     {
         $date = Carbon::createFromFormat(
