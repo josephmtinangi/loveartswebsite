@@ -12,6 +12,8 @@ trait CanResetPassword
     /**
      * Send the password reset notification.
      *
+     * {@inherited}
+     *
      * @param  string  $token
      * @return void
      */
