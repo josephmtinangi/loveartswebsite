@@ -31,6 +31,16 @@ $factory->define(App\StreetData::class, function (Faker\Generator $faker) {
 
 });
 
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name,
+        'email' => $faker->safeEmail,
+        'verified_at' => $faker->boolean ? now() : null,
+    ];
+
+});
+
 $factory->define(App\Admin\User::class, function (Faker\Generator $faker) {
     static $password;
 
