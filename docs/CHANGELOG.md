@@ -1,46 +1,33 @@
 # Changelog
 
-## [Unreleased]
+## [v1.0.0.alpha] - 2017-09-12
 
+### Added
+
+- List all verified artists
+- List all pending (unverified) artists
+- Search for verified artists by name or email
+- Search for pending artists by name or email
 - Verify artist
+- List all available pillars
+- Create a new pillar
+- Update an existing pillar
+- Delete existing pillars
+- Search for pillars by name
 - List pending artists
-- List verified artists
-- Manage pillars
-- Manage Street Data
-- Renamed `url` to `source_url`
-- Renamed `datepicker_parse_format` to `date_parse_format`
-- Added `datetime_parse_format`
-- Changed Event's createFromFormat to parseFromConfigDateTimeFormat
-- use human readable event start date
-- upcoming events instead of all available events
-- use actions in `/admin/artists` to maintain a uniform look
-- use breadcrumb `Home > Artists > Categories` instead of `Home > Artist Categories`
-- list archived events
-- list archived street-data
-- remember-me
-- forgot password
-- log in admin-user
-- list available artists
-- list available events
-- list available admin-users
-- list available admin-roles
-- list available street-data
-- list available artist-categories
-- add start-date column to events-table-migration
-- add archived-at column to events-table-migration
-- add archived-at column to street-data-migration
-- Setup breadcrumbs
-- remove auth-routes
-- add pagination to lists
-- Initiate staging routes
-- Make view artisan command
-- Setup navigation menu items
-- Mark current active menu item
-- Namespace all admin-panel code
-- open social-media link in new tab
-- Generate lang asset artisan command
-- add string helper to show resource-item if available
+- List all up-and-coming events
+- List all archived events
+- Create a new event
+- Update an existing event
+- Delete existing events
+- Search for events by their title or location
+- List all active street data
+- List all archived data
+- Create a new street data
+- Update an existing street data
+- Delete existing street data
+- Search for street data by its title
+- Log in admin user
+- Handle admin user forgot password
 
-[Unreleased]: https://github.com/joshuamabina/loverats/commits/master
-
-
+[v1.0.0.alpha]: https://github.com/jesstrux/loveartswebsite/releases/tag/v1.0.0.alpha

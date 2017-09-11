@@ -30,6 +30,7 @@ FIXES:
 
 FEATURES:
 
+- Archive a street data
 - Verify artist image
 - Display the date the specified resource was archived
 - Manage system roles
