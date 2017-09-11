@@ -11,13 +11,13 @@ class PendingArtistController extends Controller
     /**
      * Display a listing of all artists waiting verification.
      *
-     * @param   Request                 $request
+     * @param   Request $request
      *
      * @return  \Illuminate\View\View
      */
     public function getPendingArtists(Request $request)
     {
-        // build a query for pending artists
+        //build a query for pending artists
         $builder = User::query()->pending();
 
         $query = $request->input('q', '');
@@ -31,5 +31,17 @@ class PendingArtistController extends Controller
             'artists'           => $builder->paginate(),
             'query'             => $query,
         ]);
+    }
+
+    /**
+     * @param   Request $request
+     *
+     * @return  \Illuminate\Http\Response\RedirectResponse
+     */
+    public function verifyArtist(Request $request, User $artist)
+    {
+        $artist->update(['verified_at' => now()]);
+
+        return redirect()->route('admin.artists.pending');
     }
 }

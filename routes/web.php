@@ -70,6 +70,7 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
 
     Route::get('/artists/verified', 'VerifiedArtistController@getVerifiedArtists')->name('admin.artists.verified');
     Route::get('/artists/pending', 'PendingArtistController@getPendingArtists')->name('admin.artists.pending');
+    Route::patch('/artists/pending/{artist}', 'PendingArtistController@verifyArtist')->name('admin.artists.pending.verify');
 
     Route::get('/artists/pillars', 'ArtistPillarController@index')->name('admin.artists.pillars.index');
     Route::get('/artists/pillars/create', 'ArtistPillarController@create')->name('admin.artists.pillars.create');

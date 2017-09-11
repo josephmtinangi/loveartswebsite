@@ -32,15 +32,16 @@ return [
 
         ],
 
-        'delete' => [
-
-            'title' => 'Delete :name',
-
-        ],
-
         'search' => [
 
             'placeholder' => 'Search for artists by their name or email',
+
+        ],
+
+        'verify' => [
+
+            'confirm_message' => 'Are you sure you want to verify :name',
+
         ],
 
     ],

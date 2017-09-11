@@ -97,11 +97,32 @@
                                 </td>
 
                                 <td>
-                                    <a class="btn btn-info btn-sm"
+                                    <a  class="btn btn-info btn-sm"
                                         title="{{ trans('admin_artists.actions.show.title', ['name' => $artist->name]) }}"
                                         href="#">
 
                                         <i class="fa fa-folder-open"></i>
+
+                                    </a>
+
+                                    <a  class="btn btn-success btn-sm"
+                                        data-method="patch"
+                                        data-token="{{ csrf_token() }}"
+                                        data-confirm="{{
+                                            trans(
+                                                'admin_artists.actions.verify.confirm_message',
+                                                ['name' => $artist->name]
+                                            )
+                                        }}"
+                                        title="{{
+                                            trans(
+                                                'admin_artists.actions.verify.confirm_message',
+                                                ['name' => $artist->name]
+                                            )
+                                        }}"
+                                        href="{{ route('admin.artists.pending.verify', $artist->id) }}">
+
+                                        <i class="fa fa-check"></i>
 
                                     </a>
                                 </td>
