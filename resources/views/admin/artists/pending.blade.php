@@ -97,14 +97,6 @@
                                 </td>
 
                                 <td>
-                                    <a  class="btn btn-info btn-sm"
-                                        title="{{ trans('admin_artists.actions.show.title', ['name' => $artist->name]) }}"
-                                        href="#">
-
-                                        <i class="fa fa-folder-open"></i>
-
-                                    </a>
-
                                     <a  class="btn btn-success btn-sm"
                                         data-method="patch"
                                         data-token="{{ csrf_token() }}"
@@ -116,7 +108,7 @@
                                         }}"
                                         title="{{
                                             trans(
-                                                'admin_artists.actions.verify.confirm_message',
+                                                'admin_artists.actions.verify.title',
                                                 ['name' => $artist->name]
                                             )
                                         }}"

@@ -48,7 +48,6 @@
                             <th>Gender</th>
                             <th>Category</th>
                             <th>Social Media</th>
-                            <th>Actions</th>
                         </tr>
 
                     </thead>
@@ -94,16 +93,6 @@
 
                                         </a>
                                     @endif
-                                </td>
-
-                                <td>
-                                    <a class="btn btn-info btn-sm"
-                                        title="{{ trans('admin_artists.actions.show.title', ['name' => $artist->name]) }}"
-                                        href="#">
-
-                                        <i class="fa fa-folder-open"></i>
-
-                                    </a>
                                 </td>
                             </tr>
                         @endforeach

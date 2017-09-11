@@ -1,5 +1,7 @@
 # We Love Arts Website
 
+> Heads up! This is work in progress.
+
 Visit the Revamped [Love Arts Tanzania](http://loveartstanzania.com) Tanzania Website Revamp.
 
 
