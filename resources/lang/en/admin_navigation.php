@@ -12,9 +12,9 @@ return [
     */
 
     'header' => [
-        'profile' => 'Your profile',
-        'settings' => 'Settings',
-        'signout' => 'Sign out',
+        'profile'   => 'Your profile',
+        'settings'  => 'Settings',
+        'signout'   => 'Sign out',
     ],
 
     'content' => [
@@ -23,21 +23,21 @@ return [
         ],
 
         'artists' => [
-            'label' => 'Artists',
-            'list' => 'List',
-            'pillars' => 'Pillars',
+            'label'     => 'Artists',
+            'list'      => 'List',
+            'pillars'   => 'Pillars',
         ],
 
         'events' => [
-            'label' => 'Events',
-            'list' => 'List',
-            'archives' => 'Archives',
+            'label'     => 'Events',
+            'list'      => 'List',
+            'archives'  => 'Archives',
         ],
 
         'street_data' => [
-            'label' => 'Street Data',
-            'list' => 'List',
-            'archives' =>  'Archives',
+            'label'     => 'Street Data',
+            'list'      => 'List',
+            'archives'  =>  'Archives',
         ],
 
         'system' => [
