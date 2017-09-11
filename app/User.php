@@ -296,20 +296,19 @@ class User extends Authenticatable
     public static function findByEmail($email = null)
     {
         if (is_set($email)) {
-            $email = strtolower($email);
-            $query = User::where('email', $email);
-            $found = $query->first();
-            return $found;
+
+            return User::where('email', strtolower($email))->first();
+
         } else {
+
             return null;
+
         }
     }
 
     public static function parse_date($value)
     {
-        $date = Carbon::createFromFormat(
-            config('app.date_parse_format'), $value
-        );
+        $date = Carbon::createFromFormat(config('app.date_parse_format'), $value);
 
         return $date;
 
