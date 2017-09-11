@@ -104,14 +104,6 @@
                                         <i class="fa fa-folder-open"></i>
 
                                     </a>
-
-                                    <a class="btn btn-danger btn-sm"
-                                        title="{{ trans('admin_artists.actions.delete.title', ['name' => $artist->name]) }}"
-                                        href="#">
-
-                                        <i class="fa fa-trash"></i>
-
-                                    </a>
                                 </td>
                             </tr>
                         @endforeach
