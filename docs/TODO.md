@@ -30,6 +30,8 @@ FIXES:
 
 FEATURES:
 
+- Manage playlists
+- Manage featured artists
 - Archive a street data
 - Verify artist image
 - Display the date the specified resource was archived
