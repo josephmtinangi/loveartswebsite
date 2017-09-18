@@ -1,38 +1,46 @@
 # All Tasks
 
-## Active
+## v1.0.0.alpha.1
 
 FIXES:
 
-FEATURES:
-
-
-## Queued
-
-FIXES:
-
-- Display 'Not Available' if no social media found
-- Failed to create thumbnails for svgs and pdfs (migrate to imagick)
-- /admin does not redirect to /admin/login if not authenticated
-- Provide default value for datetime picker
 - Use fa-pencil (update) instead of fa-folder-open (view)
-- Update actions lang assets to use **edit** instead of **view**
-- Verify phpDoc is correct and useful
 - Verify breadcrumb naming consistency
-- Use @lang where appropriate
 - Use **media** where used **attachment** or **poster**
-- Use 64 x 64 for default thumbnail size
-- Street data, getLastModifiedDateForHumans
-- Flash message, if no listing is found.
-- Filter column and then the New Resource column (See GitHub Issues Page)
-- Not `ArtistPillar`, should be `Pillar` (It is its own resource)
 - Use media-library to manage avatars (both, default and custom)
+- /admin does not redirect to /admin/login if not authenticated
+- Verify phpDoc is correct and useful
+- Not `ArtistPillar`, should be `Pillar` (It is its own resource)
+- Do not stripe tables
+- Failed to create thumbnails for svgs and pdfs (migrate to imagick)
+- Archive a street data
+- Use `copyMedia()` instead of `addMedia(...)->preservingOriginal()`
 
 FEATURES:
 
 - Manage playlists
 - Manage featured artists
-- Archive a street data
+
+CHORES:
+
+- `deploy.sh`: A deploy to ftp-server bash script
+
+## Future releases
+
+FIXES:
+
+- Use 64 x 64 for default thumbnail size
+- Display 'Not Available' if no social media found
+- Provide default value for datetime picker
+- Update actions lang assets to use **edit** instead of **view**
+- Use @lang where appropriate
+- Use 64 x 64 for default thumbnail size
+- Street data, getLastModifiedDateForHumans
+- Flash message, if no listing is found.
+- Filter column and then the New Resource column (See GitHub Issues Page)
+
+FEATURES:
+
 - Verify artist image
 - Display the date the specified resource was archived
 - Manage system roles
@@ -52,16 +60,10 @@ FEATURES:
 - Flash notification after sending a reset password email
 - Create thumbnails of multiple sizes from added media
 
-CHORES:
-
-- Staging artisan command
-
 REFACTOR:
 
-- To stripe, or not to stripe tables
 - ValidatesUrlScheme should be a custom validation rule
 - Validate translations
-- Use `copyMedia()` instead of `addMedia(...)->preservingOriginal()`
 - What if, no table headers?
 - Refactor classes as per PHP-FIG standards
 - Project branding i.e. color, logo, typography
