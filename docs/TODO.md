@@ -10,11 +10,6 @@ FIXES:
 - Use media-library to manage avatars (both, default and custom)
 - /admin does not redirect to /admin/login if not authenticated
 - Verify phpDoc is correct and useful
-- Not `ArtistPillar`, should be `Pillar` (It is its own resource)
-- Do not stripe tables
-- Failed to create thumbnails for svgs and pdfs (migrate to imagick)
-- Archive a street data
-- Use `copyMedia()` instead of `addMedia(...)->preservingOriginal()`
 
 FEATURES:
 
@@ -29,6 +24,7 @@ CHORES:
 
 FIXES:
 
+- Show social-media link as disabled (maybe, data-disable) if value is not available.
 - Use 64 x 64 for default thumbnail size
 - Display 'Not Available' if no social media found
 - Provide default value for datetime picker
@@ -37,10 +33,11 @@ FIXES:
 - Use 64 x 64 for default thumbnail size
 - Street data, getLastModifiedDateForHumans
 - Flash message, if no listing is found.
-- Filter column and then the New Resource column (See GitHub Issues Page)
+- Filter column and then the New Resource column [See GitHub issues page]
 
 FEATURES:
 
+- Featured artist profile [See Inspinia profile]
 - Verify artist image
 - Display the date the specified resource was archived
 - Manage system roles
@@ -62,6 +59,9 @@ FEATURES:
 
 REFACTOR:
 
+- Associate `User` to `Artist` not `User` to `FeaturedArtist`.
+- Maybe, `route_description` also as form header.
+- Define "admin" routes in "/routes/admin.php"
 - ValidatesUrlScheme should be a custom validation rule
 - Validate translations
 - What if, no table headers?
@@ -78,7 +78,7 @@ REFACTOR:
 - Extend admin.layouts.page.[action(s)]
 - Create admin.layouts.partials.actionbar
 - Sociable, helper for managing a social accounts
-- Resource store route, maybe read `/{resource}/new`
+- Get page to create new resource, maybe read `/{resource}/new` [See laracon2017]
 - Clean up how routing data i.e. title/description is presented to the view
 - Breadcrumbs:
     - Home / Resource / List
@@ -87,3 +87,7 @@ REFACTOR:
     - Home / Resource / Show
     - Home / Resource / Sub-Resource / New
     - Home / Resource / Sub-Resource / Update
+
+[See laracon2017]: https://github.com/adamwathan/laracon2017
+[See Inspinia profile]: http://webapplayers.com/inspinia_admin-v2.7.1/profile_2.html
+[See GitHub issues page]: https://github.com/jesstrux/loveartswebsite/issues
