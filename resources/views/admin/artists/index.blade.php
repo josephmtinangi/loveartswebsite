@@ -42,7 +42,7 @@
                     <thead>
 
                         <tr>
-                            <th>Avatar</th>
+                            <th></th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Gender</th>

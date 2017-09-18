@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User as Artist;
+use App\FeaturedArtist;
 use App\Http\Controllers\Admin\Controller;
+use App\User as Artist;
 use Illuminate\Http\Request;
 
 // TODO only allow routes [create, store]
@@ -22,9 +23,11 @@ class FeaturedArtistController extends Controller
     {
         //$request->validate();
 
-        //$artist->feature($request->only['biography', 'questions', ]);
+        $artist->featuredArtist()->create(
+            $request->only(['biography', 'questions', ])
+        );
 
-        //flash('Hurray! You have successfully featured an artist'))->success();
+        flash('Hurray! You have successfully featured an artist')->success();
 
         return redirect()->route('admin.artists.index');
     }

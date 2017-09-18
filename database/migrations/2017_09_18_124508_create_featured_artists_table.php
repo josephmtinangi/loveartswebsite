@@ -6,24 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateFeaturedArtistsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('featured_artists', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('user_id')->unsigned();
+
+            $table->text('questions')->nullable();
+            $table->text('biography')->nullable();
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('featured_artists');

@@ -29,27 +29,28 @@
 
 </div>
 
-<div class="form-group {{ $errors->has('media') ? 'has-error' : ''}}">
+<div class="form-group {{ $errors->has('biography') ? 'has-error' : ''}}">
 
     <div class="col-md-offset-3 col-md-6">
 
         {!!
-            Form::file('media', [
+            Form::text('biography', null, [
                 'class' => 'form-control',
-                'aria-describedby' => 'mediaHelpBlock',
+                'placeholder' => 'Biography',
+                'aria-describedby'=> 'biographyHelpBlock',
                 'required' => 'required',
             ])
         !!}
 
-        @if ($errors->any() && $errors->has('media'))
+        @if ($errors->any() && $errors->has('biography'))
 
-            {!! $errors->first('media', '<p class="help-block">:message</p>') !!}
+            {!! $errors->first('biographyHelpBlock', '<p class="help-block">:message</p>') !!}
 
         @else
 
-            <p id="mediaHelpBlock" class="help-block">
+            <p id="biographyHelpBlock" class="help-block">
 
-                {{ trans('admin_artists_pillars.inputs.media.help_block') }}
+                A little about the life of {{ $instance->name }}
 
             </p>
 
@@ -59,28 +60,28 @@
 
 </div>
 
-<div class="form-group {{ $errors->has('description') ? 'has-error' : ''}}">
+<div class="form-group {{ $errors->has('questions') ? 'has-error' : ''}}">
 
     <div class="col-md-offset-3 col-md-6">
 
         {!!
-            Form::text('description', null, [
+            Form::text('questions', null, [
                 'class' => 'form-control',
-                'placeholder' => trans('admin_artists_pillars.inputs.description.placeholder') ,
-                'aria-describedby' => 'descriptionHelpBlock',
+                'placeholder' => 'Answers to interview questions',
+                'aria-describedby' => 'questionsHelpBlock',
                 'required' => 'required',
             ])
         !!}
 
-        @if ($errors->any() && $errors->has('description'))
+        @if ($errors->any() && $errors->has('questionsHelpBlock'))
 
-            {!! $errors->first('description', '<p class="help-block">:message</p>') !!}
+            {!! $errors->first('questions', '<p class="help-block">:message</p>') !!}
 
         @else
 
-            <p id="descriptionHelpBlock" class="help-block">
+            <p id="questions" class="help-block">
 
-                {{ trans('admin_artists_pillars.inputs.description.help_block') }}
+                Answers to interview questions
 
             </p>
 

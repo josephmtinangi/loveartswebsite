@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\FeaturedArtist;
 use App\ArtistPillar;
 use App\ValidatesUrlScheme;
 use Carbon\Carbon;
@@ -446,5 +447,15 @@ class User extends Authenticatable
     public function scopePending()
     {
         return self::query()->whereNull('verified_at');
+    }
+
+    /**
+     * Get the featured artist record associated with this user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function featuredArtist()
+    {
+        return $this->hasOne(FeaturedArtist::class);
     }
 }

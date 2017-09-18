@@ -47,7 +47,7 @@
 
                     </div>
 
-                    @include('admin.artists.pillars.form')
+                    @include('admin.artists.featured.form')
 
                 </div>
 
