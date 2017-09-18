@@ -68,6 +68,9 @@ Route::namespace('Admin')->prefix('/admin')->group(function () {
 
     })->name('admin.artists.index');
 
+    Route::get('/artists/featured/{artist}/new', 'FeaturedArtistController@create')->name('admin.artists.featured.create');
+    Route::post('artists/featured/{artist}', 'FeaturedArtistController@store')->name('admin.artists.featured.store');
+
     Route::get('/artists/verified', 'VerifiedArtistController@getVerifiedArtists')->name('admin.artists.verified');
     Route::get('/artists/pending', 'PendingArtistController@getPendingArtists')->name('admin.artists.pending');
     Route::patch('/artists/pending/{artist}', 'PendingArtistController@verifyArtist')->name('admin.artists.pending.verify');

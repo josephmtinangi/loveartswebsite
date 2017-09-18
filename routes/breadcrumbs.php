@@ -26,6 +26,13 @@ Breadcrumbs::register('admin.artists.pending', function ($breadcrumbs) {
     $breadcrumbs->push(trans('admin_artists.pending.name'), route('admin.artists.pending'));
 });
 
+// Home > Artists > Featured
+Breadcrumbs::register('admin.artists.featured.create', function ($breadcrumbs, $instance) {
+    $breadcrumbs->parent('admin.artists.index');
+
+    $breadcrumbs->push('Featured', route('admin.artists.featured.create', $instance));
+});
+
 // Home > Artists > Pillars
 Breadcrumbs::register('admin.artists.pillars.index', function ($breadcrumbs) {
     $breadcrumbs->parent('admin.artists.index');

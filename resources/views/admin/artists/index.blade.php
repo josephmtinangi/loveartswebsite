@@ -48,6 +48,7 @@
                             <th>Gender</th>
                             <th>Category</th>
                             <th>Social Media</th>
+                            <th>Actions</th>
                         </tr>
 
                     </thead>
@@ -93,6 +94,14 @@
 
                                         </a>
                                     @endif
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary"
+                                       href="{{ route('admin.artists.featured.create', $artist) }}">
+
+                                        <i class="fa fa-star-o"></i>
+
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
