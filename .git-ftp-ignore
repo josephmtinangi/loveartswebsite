@@ -1,0 +1,14 @@
+node_modules
+public/hot
+public/storage
+public/music
+storage/*.key
+.idea
+.vagrant
+deploy.sh
+Homestead.json
+Homestead.yaml
+*.log
+.git-ftp-ignore
+.git-ftp-include
+.gitignore
