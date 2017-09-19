@@ -24,6 +24,7 @@ CHORES:
 
 FIXES:
 
+- Use `/public/img` instead of `/public/images` (ignore `public/images`)
 - Show social-media link as disabled (maybe, data-disable) if value is not available.
 - Use 64 x 64 for default thumbnail size
 - Display 'Not Available' if no social media found
