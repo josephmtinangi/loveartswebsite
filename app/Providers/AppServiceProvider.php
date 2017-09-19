@@ -24,7 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        require_once __DIR__ . '/../Helpers/date.php';
-        require_once __DIR__ . '/../Helpers/string.php';
+        if ($this->app->environment() == 'local') {
+            $this->app->register(\Sven\ArtisanView\ServiceProvider::class);
+            $this->app->register(\Themsaid\Langman\LangmanServiceProvider::class);
+        }
     }
 }

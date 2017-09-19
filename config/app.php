@@ -195,8 +195,6 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Laravelista\Ekko\EkkoServiceProvider::class,
-        Themsaid\Langman\LangmanServiceProvider::class,
-        Sven\ArtisanView\ArtisanViewServiceProvider::class,
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
     ],
 
